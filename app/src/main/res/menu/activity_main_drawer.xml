@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_white_24dp"
+            android:title="Hem" />
+        <item
+            android:id="@+id/nav_browse"
+            android:icon="@drawable/ic_view_module_white_24dp"
+            android:title="Bläddra" />
+        <item
+            android:id="@+id/nav_favo"
+            android:icon="@drawable/ic_favorite_border_white_24dp"
+            android:title="Favoriter" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_help_outline_white_24dp"
+            android:title="Quiz" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_white_24dp"
+            android:title="Inställningar" />
+
+
+    <!--
+    <item android:title="Filter"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+            <item
+                android:title="Shareaaa"
+                android:id="@+id/spinner"
+                app:showAsAction="always"
+                android:orderInCategory="1"
+                android:actionViewClass="android.widget.Spinner" />
+        </menu>
+    </item>
+-->
+
+
+</menu>

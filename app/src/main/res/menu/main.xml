@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?><!-- toppMenyn till browseactivity -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_search"
+        android:title="Sök"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item
+        android:id="@+id/main_filter"
+        android:orderInCategory="100"
+        android:title="Filter"
+        android:textAllCaps="false"
+
+        app:showAsAction="always">
+        <menu>
+            <group
+                android:id="@+id/group_filter">
+
+    <item
+        android:id="@+id/filter_color"
+        android:title="@string/pick_color"
+        app:showAsAction="never">
+        <menu>
+            <group
+                android:id="@+id/group_color"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/all_color"
+                    android:checked="true"
+                    android:title="Alla"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/blue"
+                    android:title="Blåa"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/brown"
+                    android:title="Bruna"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/green"
+                    android:title="Gröna"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/yellow"
+                    android:title="Gula"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/orange"
+                    android:title="Orange"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/purple"
+                    android:title="Purpur"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/red"
+                    android:title="Röda"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/skar"
+                    android:title="Skära"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/violet"
+                    android:title="Violetta"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/white"
+                    android:title="Vita"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/filter_bloom"
+        android:title="@string/pick_month"
+        app:showAsAction="never">
+        <menu>
+            <group
+                android:id="@+id/group_mon"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/all_month"
+                    android:checked="true"
+                    android:title="Alla"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/jan"
+                    android:title="Januari"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/feb"
+                    android:title="Februari"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/mar"
+                    android:title="Mars"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/apr"
+                    android:title="April"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/may"
+                    android:title="Maj"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/jun"
+                    android:title="Juni"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/jul"
+                    android:title="Juli"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/aug"
+                    android:title="Augusti"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/sep"
+                    android:title="September"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/oct"
+                    android:title="Oktober"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/nov"
+                    android:title="November"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/dec"
+                    android:title="December"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/filter_group"
+        android:title="@string/pick_family"
+        app:showAsAction="never">
+        <menu>
+            <group
+                android:id="@+id/group_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/all_group"
+                    android:checked="true"
+                    android:title="Alla"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbusk"
+                    android:title="@string/busk"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qfjall"
+                    android:title="@string/fjall"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qland"
+                    android:title="@string/land"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qprydnad"
+                    android:title="@string/prydnad"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtrad"
+                    android:title="@string/trad"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvat"
+                    android:title="@string/vat"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvata4a"
+                    android:title="Familjer:"
+                    android:checkable="false"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qalm"
+                    android:title="@string/alm"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qara"
+                    android:title="@string/ara"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbal"
+                    android:title="@string/bal"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qber"
+                    android:title="@string/ber"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbjo"
+                    android:title="@string/bjo"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qben"
+                    android:title="@string/ben"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbla"
+                    android:title="@string/bla"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbok"
+                    android:title="@string/bok"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qbra"
+                    android:title="@string/bra"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qcyp"
+                    android:title="@string/cyp"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qdes"
+                    android:title="@string/des"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qdun"
+                    android:title="@string/dun"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qfack"
+                    android:title="@string/fack"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qfet"
+                    android:title="@string/fet"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qflo"
+                    android:title="@string/flo"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qfrak"
+                    android:title="@string/frak"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qgen"
+                    android:title="@string/gen"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qgro"
+                    android:title="@string/gro"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qham"
+                    android:title="@string/ham"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qhar"
+                    android:title="@string/har"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qhas"
+                    android:title="@string/has"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qhav"
+                    android:title="@string/hav"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qide"
+                    android:title="@string/ide"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qiris"
+                    android:title="@string/iris"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qjoh"
+                    android:title="@string/joh"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qjord"
+                    android:title="@string/jord"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qjung"
+                    android:title="@string/jung"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkall"
+                    android:title="@string/kall"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkap"
+                    android:title="@string/kap"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkavel"
+                    android:title="@string/kavel"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkines"
+                    android:title="@string/kines"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qklock"
+                    android:title="@string/klock"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkon"
+                    android:title="@string/kon"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkor"
+                    android:title="@string/kor"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkorg"
+                    android:title="@string/korg"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkors"
+                    android:title="@string/kors"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qkrans"
+                    android:title="@string/krans"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlej"
+                    android:title="@string/lej"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlil"
+                    android:title="@string/lil"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlin"
+                    android:title="@string/lin"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlinn"
+                    android:title="@string/linn"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlju"
+                    android:title="@string/lju"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlumm"
+                    android:title="@string/lumm"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlas"
+                    android:title="@string/las"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qlok"
+                    android:title="@string/lok"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qmal"
+                    android:title="@string/mal"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qmall"
+                    android:title="@string/mall"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qmalva"
+                    android:title="@string/malva"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qmar"
+                    android:title="@string/mar"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qmyr"
+                    android:title="@string/myr"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qnak"
+                    android:title="@string/nak"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qnas"
+                    android:title="@string/nas"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qnav"
+                    android:title="@string/nav"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qnej"
+                    android:title="@string/nej"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qole"
+                    android:title="@string/ole"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qork"
+                    android:title="@string/ork"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qorm"
+                    android:title="@string/orm"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qpors"
+                    android:title="@string/pors"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qpot"
+                    android:title="@string/pot"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qran"
+                    android:title="@string/ran"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qres"
+                    android:title="@string/res"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qrip"
+                    android:title="@string/rip"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qros"
+                    android:title="@string/ros"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsand"
+                    android:title="@string/sand"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsil"
+                    android:title="@string/sil"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsli"
+                    android:title="@string/sli"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsny"
+                    android:title="@string/sny"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsol"
+                    android:title="@string/sol"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qspa"
+                    android:title="@string/spa"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsten"
+                    android:title="@string/sten"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qstra"
+                    android:title="@string/stra"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsva"
+                    android:title="@string/sva"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qsyr"
+                    android:title="@string/syr"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtall"
+                    android:title="@string/tall"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtib"
+                    android:title="@string/tib"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtre"
+                    android:title="@string/tre"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtri"
+                    android:title="@string/tri"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtat"
+                    android:title="@string/tat"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qtor"
+                    android:title="@string/tor"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvall"
+                    android:title="@string/vall"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvatt"
+                    android:title="@string/vatt"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvide"
+                    android:title="@string/vide"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvin"
+                    android:title="@string/vin"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qviol"
+                    android:title="@string/viol"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qviv"
+                    android:title="@string/viv"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvadd"
+                    android:title="@string/vadd"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qvand"
+                    android:title="@string/vand"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/qart"
+                    android:title="@string/art"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/filter_region"
+        android:title="@string/pick_region"
+        app:showAsAction="never">
+        <menu>
+            <group
+                android:id="@+id/group_reg"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/all_regions"
+                    android:checked="true"
+                    android:title="Hela Sverige"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rb"
+                    android:title="@string/rb"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/ro"
+                    android:title="@string/ro"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/r1"
+                    android:title="@string/r1"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rp"
+                    android:title="@string/rp"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rc"
+                    android:title="@string/rc"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rr"
+                    android:title="@string/rr"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rg"
+                    android:title="@string/rg"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rd"
+                    android:title="@string/rd"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/re"
+                    android:title="@string/re"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rt"
+                    android:title="@string/rt"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/ra"
+                    android:title="@string/ra"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rk"
+                    android:title="@string/rk"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rj"
+                    android:title="@string/rj"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rl"
+                    android:title="@string/rl"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rn"
+                    android:title="@string/rn"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rs"
+                    android:title="@string/rs"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rq"
+                    android:title="@string/rq"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rm"
+                    android:title="@string/rm"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rf"
+                    android:title="@string/rf"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/ri"
+                    android:title="@string/ri"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/rh"
+                    android:title="@string/rh"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+
+                <item
+                    android:id="@+id/filter_reset"
+                    android:title="Återställ filter"
+                    android:icon="@drawable/ic_settings_backup_restore_black_24dp"
+                    android:visible="false"
+                    app:showAsAction="always"/>
+
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_sort"
+        android:orderInCategory="100"
+        android:title="Sortera"
+        app:showAsAction="always">
+        <menu>
+            <group
+                android:id="@+id/group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_sort_az"
+                    android:checked="true"
+                    android:icon="@drawable/ic_keyboard_arrow_up_black_24dp"
+                    android:title="Namn (A - Ö)" />
+                <item
+                    android:id="@+id/menu_sort_za"
+                    android:icon="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:title="Namn (Ö - A)" />
+                <item
+                    android:id="@+id/menu_sort_length"
+                    android:icon="@drawable/ic_keyboard_arrow_up_black_24dp"
+                    android:title="Höjd (Stigande)" />
+                <item
+                    android:id="@+id/menu_sort_length_rev"
+                    android:icon="@drawable/ic_keyboard_arrow_down_black_24dp"
+                    android:title="Höjd (Fallande)" />
+            </group>
+        </menu>
+    </item>
+</menu>

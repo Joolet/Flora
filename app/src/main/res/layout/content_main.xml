@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Huvudlayouten till MainActivity -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    android:background="@drawable/new_bg"
+    android:scaleType="centerCrop">
+
+
+        <Button
+            android:text="Bläddra"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_width="167dp"
+            android:layout_height="50dp"
+            android:background="@xml/button_layout"
+            android:drawableEnd="@drawable/ic_view_module_white_24dp"
+            android:drawablePadding="0dp"
+            android:paddingRight="10pt"
+            android:textAllCaps="false"
+            android:onClick="goBrowse"
+            android:id="@+id/button"
+            android:layout_above="@+id/button2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="22dp" />
+
+    <Button
+
+        android:text="Favoriter"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_width="167dp"
+        android:layout_height="50dp"
+        android:background="@xml/button_layout"
+        android:drawableEnd="@drawable/ic_favorite_border_white_24dp"
+        android:drawablePadding="0dp"
+        android:paddingRight="10pt"
+        android:textAllCaps="false"
+        android:onClick="goFavo"
+        android:id="@+id/button2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Quiz"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_width="167dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="22dp"
+        android:background="@xml/button_layout"
+        android:drawableEnd="@drawable/ic_help_outline_white_24dp"
+        android:drawablePadding="0dp"
+        android:paddingRight="10pt"
+        android:textAllCaps="false"
+        android:onClick="goQuiz"
+        android:id="@+id/quiz"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+
+
+        <Button
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@xml/button_layout_round"
+            android:drawableStart="@drawable/ic_settings_white_24dp"
+            android:textAllCaps="false"
+            android:id="@+id/button4"
+            android:onClick="goSettings"
+            android:layout_gravity="left|bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@xml/button_layout_round"
+            android:drawableStart="@drawable/ic_info_outline_white_24dp"
+            android:textAllCaps="false"
+            android:id="@+id/button3"
+            android:onClick="goAbout"
+            android:layout_gravity="bottom|right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" />
+
+
+
+
+
+</RelativeLayout>

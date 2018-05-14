@@ -1,0 +1,522 @@
+<resources>
+    <string name="app_name">Flora</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="red">red</string>
+    <string name="blue">blue</string>
+    <string name="orange">orange</string>
+
+    <!-- filtermeny i browseactivity-->
+    <string name="pick_month">Välj blomningstid</string>
+    <string name="pick_region">Välj region</string>
+    <string name="pick_family">Välj familj/kategori</string>
+    <string name="pick_color">Välj färg på blomma</string>
+
+    <!-- Omvandligar mellan län och länets identifierings kod, används i meny och browseactivity-->
+    <string name="r1">Gotlands län</string>
+    <string name="r2">Gotlands län</string>
+    <string name="ra">Skåne län</string>
+    <string name="rb">Blekinge län</string>
+    <string name="rc">Hallands län</string>
+    <string name="rd">Kalmar län</string>
+    <string name="re">Kronobergs län</string>
+    <string name="rf">Västra Götalands län</string>
+    <string name="rg">Jönköpings län</string>
+    <string name="rh">Östergötalands län</string>
+    <string name="ri">Örebro län</string>
+    <string name="rj">Södermanlands län</string>
+    <string name="rk">Stockholms län</string>
+    <string name="rl">Uppsala län</string>
+    <string name="rm">Västmanlands län</string>
+    <string name="rn">Värmlands län</string>
+    <string name="ro">Dalarnas län</string>
+    <string name="rp">Gävleborgs län</string>
+    <string name="rq">Västernorrlands län</string>
+    <string name="rr">Jämtlands län</string>
+    <string name="rs">Västerbottens län</string>
+    <string name="rt">Norrbottens län</string>
+
+    <!-- Omvandligar mellan familj och familjens identifierings kod, som används i menyn eller browseactivity-->
+    <string name="busk">Buskar</string>
+    <string name="land">Landskapsblommor</string>
+    <string name="trad">Träd</string>
+    <string name="fjall">Fjällväxter</string>
+    <string name="prydnad">Prydnadsväxter</string>
+    <string name="vat">Vattenväxter</string>
+    <string name="tistlar">Tistlar</string>
+    <string name="klang">Klängväxter</string>
+    <string name="fibblor">Fibblor</string>
+    <string name="alm">Almväxter</string>
+    <string name="ara">Araliaväxter</string>
+    <string name="bal">Balsaminväxter</string>
+    <string name="ber">Berberisväxter</string>
+    <string name="ben">Benvedsväxter</string>
+    <string name="bla">Blågullsväxter</string>
+    <string name="bok">Bokväxter</string>
+    <string name="bjo">Björkväxter</string>
+    <string name="bra">Brakvedsväxter</string>
+    <string name="cyp">Cypressväxter</string>
+    <string name="des">Desmeknoppväxter</string>
+    <string name="dun">Dunörtsväxter</string>
+    <string name="fack">Fackelsblomsväxter</string>
+    <string name="flo">Flockblommiga växter</string>
+    <string name="fet">Fetbladsväxter</string>
+    <string name="frak">Fräkenväxter</string>
+    <string name="gen">Gentianaväxter</string>
+    <string name="gro">Grobladsväxter</string>
+    <string name="ham">Hampväxter</string>
+    <string name="har">Harsyreväxter</string>
+    <string name="has">Hasselväxter</string>
+    <string name="hav">Havtornsväxter</string>
+    <string name="ide">Idegransväxter</string>
+    <string name="iris">Irisväxter</string>
+    <string name="joh">Johannesörtväxter</string>
+    <string name="jord">Jordröksväxter</string>
+    <string name="jung">Jungfrulinväxter</string>
+    <string name="kap">Kaprifolväxter</string>
+    <string name="kall">Kallaväxter</string>
+    <string name="kavel">Kaveldunväxter</string>
+    <string name="kines">Kinesträdsväxter</string>
+    <string name="klock">Klockväxter</string>
+    <string name="kon">Konvaljväxter</string>
+    <string name="korg">Korgblommiga växter</string>
+    <string name="kor">Kornellväxter</string>
+    <string name="kors">Korsblommiga växter</string>
+    <string name="krans">Kransblommiga växter</string>
+    <string name="lej">Lejongapväxter</string>
+    <string name="lil">Liljeväxter</string>
+    <string name="linn">Linneaväxter</string>
+    <string name="lin">Linväxter</string>
+    <string name="lju">Ljungväxter</string>
+    <string name="lumm">Lummerväxter</string>
+    <string name="lok">Lökväxter</string>
+    <string name="las">Låsbräkenväxter</string>
+    <string name="mal">Malväxter</string>
+    <string name="mall">Mållväxter</string>
+    <string name="malva">Malvaväxter</string>
+    <string name="mar">Måreväxter</string>
+    <string name="myr">Myrliljeväxter</string>
+    <string name="nej">Nejlikväxter</string>
+    <string name="nak">Näckrosväxter</string>
+    <string name="nas">Nässelväxter</string>
+    <string name="nav">Näveväxter</string>
+    <string name="ole">Oleanderväxter</string>
+    <string name="ork">Orkideér</string>
+    <string name="orm">Ormbunksväxter</string>
+    <string name="pors">Porsväxter</string>
+    <string name="pot">Potatisväxter</string>
+    <string name="ran">Ranunkelväxter</string>
+    <string name="res">Resedaväxter</string>
+    <string name="rip">Ripsväxter</string>
+    <string name="ros">Rosväxter</string>
+    <string name="sil">Silehårsväxter</string>
+    <string name="sli">Slideväxter</string>
+    <string name="sand">Sandelträdväxter</string>
+    <string name="sol">Solvändeväxter</string>
+    <string name="spa">Sparrisväxter</string>
+    <string name="sny">Snyltrotsväxter</string>
+    <string name="sten">Stenbräckeväxter</string>
+    <string name="stra">Strävbladiga växter</string>
+    <string name="sva">Svaltingväxter</string>
+    <string name="syr">Syrenväxter</string>
+    <string name="tall">Tallväxter</string>
+    <string name="tib">Tibastväxter</string>
+    <string name="tre">Trebladsväxter</string>
+    <string name="tri">Triftväxter</string>
+    <string name="tat">Tätörtväxter</string>
+    <string name="tor">Törelväxter</string>
+    <string name="vall">Vallmoväxter</string>
+    <string name="vatt">Vattenklöversväxter</string>
+    <string name="vide">Videväxter</string>
+    <string name="vin">Vindeväxter</string>
+    <string name="viol">Violväxter</string>
+    <string name="viv">Viveväxter</string>
+    <string name="vadd">Väddväxter</string>
+    <string name="vand">Vänderotväxter</string>
+    <string name="art">Ärtväxter</string>
+
+    <!-- Omvandligar mellan familj och familjens identifierings kod-->
+    <string name="Araliavaxter">ara</string>
+    <string name="Balsaminvaxter">bal</string>
+    <string name="Blagullsvaxter">bla</string>
+    <string name="Buskar">busk</string>
+    <string name="Trad">trad</string>
+    <string name="Landskapsblommor">land</string>
+    <string name="Tistlar">tistlar</string>
+    <string name="Klangvaxter">klang</string>
+    <string name="Fibblor">fibblor</string>
+    <string name="Fjallvaxter">fjall</string>
+    <string name="Prydnadsvaxter">prydnad</string>
+    <string name="Desmeknoppvaxter">des</string>
+    <string name="Dunortsvaxter">dun</string>
+    <string name="Fackelsblomsvaxter">fack</string>
+    <string name="Flockblommiga">flo</string>
+    <string name="Fetbladsvaxter">fet</string>
+    <string name="Gentianavaxter">gen</string>
+    <string name="Grobladsvaxter">gro</string>
+    <string name="Hampvaxter">ham</string>
+    <string name="Harsyrevaxter">har</string>
+    <string name="Hasselvaxter">has</string>
+    <string name="Irisvaxter">iris</string>
+    <string name="Johannesortvaxter">joh</string>
+    <string name="Jordroksvaxter">jord</string>
+    <string name="Jungfrulinvaxter">jung</string>
+    <string name="Kaprifolvaxter">kap</string>
+    <string name="Vattenvaxter">vat</string>
+    <string name="Klockvaxter">klock</string>
+    <string name="Konvaljvaxter">kon</string>
+    <string name="Korgblommiga">korg</string>
+    <string name="Kornellvaxter">kor</string>
+    <string name="Korsblommiga">kors</string>
+    <string name="Kransblommiga">krans</string>
+    <string name="Lejongapvaxter">lej</string>
+    <string name="Linneavaxter">linn</string>
+    <string name="Linvaxter">lin</string>
+    <string name="Liljevaxter">lil</string>
+    <string name="Ljungvaxter">lju</string>
+    <string name="Lokvaxter">lok</string>
+    <string name="Malvaxter">mal</string>
+    <string name="Mallvaxter">mall</string>
+    <string name="Marevaxter">mar</string>
+    <string name="Myrliljevaxter">myr</string>
+    <string name="Nejlikvaxter">nej</string>
+    <string name="Nackrosvaxter">nack</string>
+    <string name="Nasselvaxter">nas</string>
+    <string name="Navevaxter">nav</string>
+    <string name="Oleandervaxter">ole</string>
+    <string name="Orkideer">ork</string>
+    <string name="Potatisvaxter">pot</string>
+    <string name="Ranunkelvaxter">ran</string>
+    <string name="Resedavaxter">res</string>
+    <string name="Rosvaxter">ros</string>
+    <string name="Sileharsvaxter">sil</string>
+    <string name="Slidevaxter">sli</string>
+    <string name="Sandeltradvaxter">sand</string>
+    <string name="Solvandevaxter">sol</string>
+    <string name="Sparrisvaxter">spa</string>
+    <string name="Snyltrotsvaxter">sny</string>
+    <string name="Stenbrackevaxter">sten</string>
+    <string name="Stravbladiga">stra</string>
+    <string name="Svaltingvaxter">sva</string>
+    <string name="Syrenvaxter">syr</string>
+    <string name="Tibastvaxter">tib</string>
+    <string name="Trebladsvaxter">tre</string>
+    <string name="Triftvaxter">tri</string>
+    <string name="Tatortvaxter">tat</string>
+    <string name="Torelvaxter">tor</string>
+    <string name="Vallmovaxter">vall</string>
+    <string name="Vattenkloversvaxter">vatt</string>
+    <string name="Vindevaxter">vin</string>
+    <string name="Violvaxter">viol</string>
+    <string name="Vivevaxter">viv</string>
+    <string name="Vaddvaxter">vadd</string>
+    <string name="Vanderotvaxter">vand</string>
+    <string name="Artvaxter">art</string>
+    <string name="Tallvaxter">tall</string>
+    <string name="Videvaxter">vide</string>
+    <string name="Kinestradsvaxter">kines</string>
+    <string name="Malvavaxter">malva</string>
+    <string name="Berberisvaxter">ber</string>
+    <string name="Benvedsvaxter">ben</string>
+    <string name="Brakvedsvaxter">bra</string>
+    <string name="Havtornsvaxter">hav</string>
+    <string name="Ripsvaxter">rip</string>
+    <string name="Almvaxter">alm</string>
+    <string name="Bokvaxter">bok</string>
+    <string name="Bjorkvaxter">bjo</string>
+    <string name="Porsvaxter">pors</string>
+    <string name="Idegransvaxter">ide</string>
+    <string name="Cypressvaxter">cyp</string>
+    <string name="Kallavxter">kall</string>
+    <string name="Kaveldunvaxter">kavel</string>
+    <string name="Ormbunksvaxter">orm</string>
+    <string name="Lasbrakenvaxter">las</string>
+    <string name="Frakenvaxter">frak</string>
+    <string name="Lummervaxter">lumm</string>
+
+    <!-- Omvandligar mellan län och landskapsblomma-->
+    <string name="Ek">Blekinge</string>
+    <string name="Vildkaprifol">Bohuslän</string>
+    <string name="Angsklocka">Dalarna</string>
+    <string name="Forgatmigej">Dalsland</string>
+    <string name="Murgrona">Gotland</string>
+    <string name="Liljekonvalj">Gästrikland</string>
+    <string name="Harginst">Halland</string>
+    <string name="Lin">Hälsingland</string>
+    <string name="Mosippa">Härjedalen</string>
+    <string name="Brunkulla">Jämtland</string>
+    <string name="Fjallsippa">Lappland</string>
+    <string name="Gran">Medelpad</string>
+    <string name="Akerbar">Norrbotten</string>
+    <string name="Gullviva">Närke</string>
+    <string name="Prastkrage">Skåne</string>
+    <string name="Linnea">Småland</string>
+    <string name="Vit">Södermanland</string>
+    <string name="Kungsangslilja">Uppland</string>
+    <string name="Skogsstjarna">Värmland</string>
+    <string name="Kung">Västerbotten</string>
+    <string name="Ljung">Västergötland</string>
+    <string name="Mistel">Västmanland</string>
+    <string name="Styvmorsviol">Ångermanland</string>
+    <string name="Olandssolvanda">Öland</string>
+    <string name="Blaklint">Östergötland</string>
+
+    <!-- Omvandligar mellan län och landskapsblomma-->
+    <string name="Blekinge1">Ek</string>
+    <string name="Bohuslan1">Vildkaprifol</string>
+    <string name="Dalarna1">Ängsklocka</string>
+    <string name="Dalsland1">Förgätmigej</string>
+    <string name="Gotland1">Murgröna</string>
+    <string name="Gastrikland1">Liljekonvalj</string>
+    <string name="Halland1">Hårginst</string>
+    <string name="Halsingland1">Lin</string>
+    <string name="Harjedalen1">Mosippa</string>
+    <string name="Jamtland1">Brunkulla</string>
+    <string name="Lappland1">Fjällsippa</string>
+    <string name="Medelpad1">Gran</string>
+    <string name="Norrbotten1">Åkerbär</string>
+    <string name="Narke1">Gullviva</string>
+    <string name="Skane1">Prästkrage</string>
+    <string name="Smaland1">Linnea</string>
+    <string name="Sodermanland1">Vit näckros</string>
+    <string name="Uppland1">Kungsängslilja</string>
+    <string name="Varmland1">Skogsstjärna</string>
+    <string name="Vasterbotten1">Kung Karls spira</string>
+    <string name="Vastergotland1">Ljung</string>
+    <string name="Vastmanland1">Mistel</string>
+    <string name="Angermanland1">Styvmorsviol</string>
+    <string name="Oland1">Ölandssolvända</string>
+    <string name="Ostergotland1">Blåklint</string>
+
+    <!-- Används till QUIZ för spinnern -->
+    <string-array name="region_array">
+        <item>Hela Sverige</item>
+        <item>Blekinge län</item>
+        <item>Dalarnas län</item>
+        <item>Gotlands län</item>
+        <item>Gävleborgs län</item>
+        <item>Hallands län</item>
+        <item>Jämtlands län</item>
+        <item>Jönköpings län</item>
+        <item>Kalmar län</item>
+        <item>Kronobergs län</item>
+        <item>Norrbottens län</item>
+        <item>Skåne län</item>
+        <item>Stockholms län</item>
+        <item>Södermanlands län</item>
+        <item>Uppsala län</item>
+        <item>Värmlands län</item>
+        <item>Västerbottens län</item>
+        <item>Västernorrlands län</item>
+        <item>Västmanlands län</item>
+        <item>Västra Götalands län</item>
+        <item>Örebro län</item>
+        <item>Östergötalands län</item>
+    </string-array>
+
+    <!-- Används till QUIZ för spinnern -->
+    <string-array name="family_array">
+        <item>Välj familj</item>
+        <item>Almväxter</item>
+        <item>Araliaväxter</item>
+        <item>Balsaminväxter</item>
+        <item>Berberisväxter</item>
+        <item>Benvedsväxter</item>
+        <item>Blågullsväxter</item>
+        <item>Bokväxter</item>
+        <item>Björkväxter</item>
+        <item>Brakvedsväxter</item>
+        <item>Cypressväxter</item>
+        <item>Desmeknoppväxter</item>
+        <item>Dunörtsväxter</item>
+        <item>Fackelsblomsväxter</item>
+        <item>Flockblommiga växter</item>
+        <item>Fetbladsväxter</item>
+        <item>Fräkenväxter</item>
+        <item>Gentianaväxter</item>
+        <item>Grobladsväxter</item>
+        <item>Hampväxter</item>
+        <item>Harsyreväxter</item>
+        <item>Hasselväxter</item>
+        <item>Havtornsväxter</item>
+        <item>Idegransväxter</item>
+        <item>Irisväxter</item>
+        <item>Johannesörtväxter</item>
+        <item>Jordröksväxter</item>
+        <item>Jungfrulinväxter</item>
+        <item>Kaprifolväxter</item>
+        <item>Kallaväxter</item>
+        <item>Kaveldunväxter</item>
+        <item>Kinesträdsväxter</item>
+        <item>Klockväxter</item>
+        <item>Konvaljväxter</item>
+        <item>Korgblommiga växter</item>
+        <item>Kornellväxter</item>
+        <item>Korsblommiga växter</item>
+        <item>Kransblommiga växter</item>
+        <item>Lejongapväxter</item>
+        <item>Liljeväxter</item>
+        <item>Linneaväxter</item>
+        <item>Linväxter</item>
+        <item>Ljungväxter</item>
+        <item>Lummerväxter</item>
+        <item>Lökväxter</item>
+        <item>Låsbräkenväxter</item>
+        <item>Malväxter</item>
+        <item>Mållväxter</item>
+        <item>Malvaväxter</item>
+        <item>Måreväxter</item>
+        <item>Myrliljeväxter</item>
+        <item>Nejlikväxter</item>
+        <item>Näckrosväxter</item>
+        <item>Nässelväxter</item>
+        <item>Näveväxter</item>
+        <item>Oleanderväxter</item>
+        <item>Orkideér</item>
+        <item>Ormbunksväxter</item>
+        <item>Porsväxter</item>
+        <item>Potatisväxter</item>
+        <item>Ranunkelväxter</item>
+        <item>Resedaväxter</item>
+        <item>Ripsväxter</item>
+        <item>Rosväxter</item>
+        <item>Silehårsväxter</item>
+        <item>Slideväxter</item>
+        <item>Sandelträdväxter</item>
+        <item>Solvändeväxter</item>
+        <item>Sparrisväxter</item>
+        <item>Snyltrotsväxter</item>
+        <item>Stenbräckeväxter</item>
+        <item>Strävbladiga växter</item>
+        <item>Svaltingväxter</item>
+        <item>Syrenväxter</item>
+        <item>Tallväxter</item>
+        <item>Tibastväxter</item>
+        <item>Trebladsväxter</item>
+        <item>Triftväxter</item>
+        <item>Tätörtväxter</item>
+        <item>Törelväxter</item>
+        <item>Vallmoväxter</item>
+        <item>Vattenklöversväxter</item>
+        <item>Videväxter</item>
+        <item>Vindeväxter</item>
+        <item>Violväxter</item>
+        <item>Viveväxter</item>
+        <item>Väddväxter</item>
+        <item>Vänderotväxter</item>
+        <item>Ärtväxter</item>
+    </string-array>
+
+    <!-- Används till QUIZ för spinnern -->
+    <string-array name="cat_array">
+        <item>Välj kategori</item>
+        <item>Buskar</item>
+        <item>Fibblor</item>
+        <item>Fjällväxter</item>
+        <item>Klängväxter</item>
+        <item>Prydnadsväxter</item>
+        <item>Tistlar</item>
+        <item>Träd</item>
+        <item>Vattenväxter</item>
+    </string-array>
+
+    <!-- Används till kronblad, spinner -->
+    <string-array name="flower_petal">
+        <item>Upp till 3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6+</item>
+        <item>Varierar</item>
+        <item>Asymmetrisk eller annat</item>
+        <item>Saknar/syns ej</item>
+    </string-array>
+
+    <!-- Omvandligar mellan månadskod och månad -->
+    <string name="m1">jan</string>
+    <string name="m2">feb</string>
+    <string name="m3">mar</string>
+    <string name="m4">apr</string>
+    <string name="m5">may</string>
+    <string name="m6">jun</string>
+    <string name="m7">jul</string>
+    <string name="m8">aug</string>
+    <string name="m9">sep</string>
+    <string name="m10">oct</string>
+    <string name="m11">nov</string>
+    <string name="m12">dec</string>
+    <string name="n1">Januari</string>
+    <string name="n2">Februari</string>
+    <string name="n3">Mars</string>
+    <string name="n4">April</string>
+    <string name="n5">Maj</string>
+    <string name="n6">Juni</string>
+    <string name="n7">Juli</string>
+    <string name="n8">Augusti</string>
+    <string name="n9">September</string>
+    <string name="n10">Oktober</string>
+    <string name="n11">November</string>
+    <string name="n12">December</string>
+
+    <!-- Omvandligar mellan Län och länets ID -->
+    <string name="Gotlands">1</string>
+    <string name="Skane">a</string>
+    <string name="Blekinge">b</string>
+    <string name="Hallands">c</string>
+    <string name="Kalmar">d</string>
+    <string name="Kronobergs">e</string>
+    <string name="Vastra">f</string>
+    <string name="Jonkopings">g</string>
+    <string name="Ostergotalands">h</string>
+    <string name="Orebro">i</string>
+    <string name="Sodermanlands">j</string>
+    <string name="Stockholms">k</string>
+    <string name="Uppsala">l</string>
+    <string name="Vastmanlands">m</string>
+    <string name="Varmlands">n</string>
+    <string name="Dalarnas">o</string>
+    <string name="Gavleborgs">p</string>
+    <string name="Vasternorrlands">q</string>
+    <string name="Jamtlands">r</string>
+    <string name="Vasterbottens">s</string>
+    <string name="Norrbottens">t</string>
+
+
+    <string name="info3">För att få den senaste version av databasen (all textinformation om en blomma), krävs internetuppkoppling. Senaste databasversionen kommer alltid vara inkluderad i en app-uppdatering.</string>
+    <string name="info2">Appen har inspirerats av Wikipedia, planen är att användare som du ska kunna redigera all information om en blomma för att få en så bra databas som möjligt. För tillfället är det bara möjligt att redigera blommans beskrivning. Beroende på hur populärt det blir med bidragandet, så kommer man även i framtiden kunna redigera all information om en blomma samt lägga till bilder och eventuellt en topplista vem som har bidragit mest. </string>
+
+    <string name="info1">Tack för att du har laddat ner och installerat denna app. Det finns mer än 500 stycken växter i denna app med illustrerade bilder.</string>
+    <string name="info4">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
+    <string name="report">Händer det att appen kraschar, så var snäll och tryck rapportera så jag kan åtgärda problemet till nästa uppdatering.</string>
+    <string name="info6">Jag som har gjort appen har inga kunskaper inom botanik och att det finns risk att förekommer fel i växternas egenskaper eller beskrivningar.</string>
+    <string name="info5">Appen är först och främst utvecklad för Android 5.0 och uppåt och för upplösningar från 720p. Upplever du att appen inte fungerar korrekt eller att bilder ser konstiga ut, så hör gärna av dig.</string>
+
+    <string name="info9">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
+
+
+    <string name="appversion">App-version 1.20</string>
+    <string name="dataversion">Databas-version 1.06</string>
+
+    <string name="kalla1">\u2022 Franz Eugen Köhler, Köhlers Medizinal-Pflanzen</string>
+    <string name="kalla2">\u2022 Jacob Sturm, Flora von Deutschland in Abbildungen nach der Natur</string>
+    <string name="kalla3">\u2022 Carl Lindman, Bilder ur Nordens flora</string>
+    <string name="kalla4">\u2022 SLU ArtDatabanken, www.artdatabanken.se/</string>
+    <string name="kalla5">\u2022 Den virtuella floran, http://linnaeus.nrm.se/flora/</string>
+    <string name="kalla6">\u2022 Ivar Elvers, Vår flora i färg</string>
+    <string name="kalla7">\u2022 Nordstedts, Lilla fälthandboken Träd och Buskar</string>
+    <string name="kalla8">\u2022 Nordstedts, Lilla fälthandboken Flora</string>
+    <string name="kalla9">\u2022 Bolin von Post, Floran i färg</string>
+    <string name="kalla10">\u2022 Björn Ursing, Svenska växter, Panergamer</string>
+    <string name="kalla10b">\u2022 Björn Ursing, Svenska växter, Kryptogamer</string>
+    <string name="kalla11">\u2022 Nybloms, Hälsoflora</string>
+    <string name="kalla12">\u2022 Jan Kops, Flora Batava</string>
+    <string name="kalla13">\u2022 J.C. Krauss, Afbeeldingen der artseny-gewassen met dervelver Nederduitsche</string>
+
+    <string name="kontakt1">Här nedan kan du kontakta mig angånde appen. Berätta vad du tycker, alla förslag är välkomna, både ris och ros.</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+
+    //apt737 --> winter00
+    //Det är trevligt att personer har gett bra betyg i Play butiken, det sporrar mig att fortsätta uppdatera appen.
+
+</resources>

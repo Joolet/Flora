@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/my_toolbar"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/asddasdasd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSettings"
+                android:padding="5dp"
+                android:text="Välj kategori:"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/radio_fam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="radio_fam"
+                        android:paddingRight="5dp"
+                        android:text="" />
+                    <Spinner
+                        android:id="@+id/spinner_cat"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="15dp"
+                        android:spinnerMode="dialog"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_cat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="radio_cat"
+                    android:paddingRight="5dp"
+                    android:text="" />
+
+                <Spinner
+                    android:id="@+id/spinner_fam"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="15dp"
+                    android:spinnerMode="dialog"
+                    android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="radio_all"
+                        android:paddingRight="5dp"
+                        android:text="" />
+
+                    <Spinner
+                        android:id="@+id/spinner_all"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="15dp"
+                        android:spinnerMode="dialog"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_land"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="radio_land"
+                        android:paddingRight="7dp"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:paddingStart="5dp"
+                        android:id="@+id/textview_land"
+                        android:text="Landskapsblommor"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_fav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="radio_fav"
+                        android:paddingRight="7dp"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:paddingStart="5dp"
+                        android:id="@+id/textview_favo"
+                        android:text="Mina favoriter"
+                        />
+
+                </LinearLayout>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/asddasjdasd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSettings"
+                android:padding="5dp"
+                android:text="Filter:"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content">
+
+            <CheckBox
+                android:text=""
+                android:layout_width="match_parent"
+                android:checked="true"
+                android:onClick="region_check"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox" />
+
+            <Spinner
+                android:id="@+id/spinner_region"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="15dp"
+                android:spinnerMode="dropdown"
+                android:textColor="#000000" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/latin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSettings"
+                android:padding="5dp"
+                android:text="Språk:"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_swedish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:onClick="radio_lan"
+                    android:paddingRight="5dp"
+                    android:text="Svenska" />
+                <RadioButton
+                    android:id="@+id/radio_latin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:onClick="radio_lan"
+                    android:paddingRight="5dp"
+                    android:text="Latin" />
+                </RadioGroup>
+
+            <TextView
+                android:id="@+id/asddasjdasddd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSettings"
+                android:padding="5dp"
+                android:text="Typ av quiz:"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:onClick="goToListQuiz"
+                    android:id="@+id/goToListQuiz"
+                    android:src="@drawable/example_quiz_s"
+                    />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:onClick="goToPicQuiz"
+                    android:id="@+id/goToPicQuiz"
+                    android:src="@drawable/example_quiz_pic"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:text="Starta"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:onClick="goNext"
+                android:id="@+id/b2"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:paddingTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@+id/b3"
+                android:background="@xml/button_layout"
+                android:textAllCaps="false"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

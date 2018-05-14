@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="se.baraluftvapen.hansson.flora.SettingsActivity"
+    android:background="#ffffff">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="10dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:id="@+id/hidebark"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:text="Maskros"
+                android:paddingTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:id="@+id/question"
+                android:textSize="26sp"
+                android:layout_gravity="center_horizontal|center_vertical" />
+        </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+
+        android:layout_below="@+id/my_toolbar"
+        android:id="@+id/hidebar"
+        android:background="@color/colorSettings">
+
+        <TextView
+            android:text="Poäng: 0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score"
+            android:textSize="20dp"
+            android:paddingLeft="15dp"
+            android:gravity="left"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="Nästa ->"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/GoToNextQ"
+            android:onClick="GoToNextQ"
+            android:textSize="20dp"
+            android:paddingRight="15dp"
+            android:gravity="right"
+            android:visibility="invisible"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/hidebar"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/hidebark"
+        android:shrinkColumns="*"  android:stretchColumns="*" android:background="@color/colorDes2">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/cr"
+                android:scaleType="fitXY"
+                android:onClick="image2Click"
+                android:id="@+id/image2"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/ar"
+                android:scaleType="fitXY"
+                android:onClick="image1Click"
+                android:id="@+id/image1"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="-15dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@color/colorDes2"
+                android:layout_height="15dp">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@color/colorDes2"
+                android:layout_height="15dp">
+            </LinearLayout>
+            </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/cr"
+                android:scaleType="fitXY"
+                android:onClick="image4Click"
+                android:id="@+id/image4"
+                android:layout_marginBottom="-15dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/z18_t"
+                android:scaleType="fitXY"
+                android:onClick="image3Click"
+                android:id="@+id/image3"
+                android:layout_marginBottom="-15dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+</RelativeLayout>

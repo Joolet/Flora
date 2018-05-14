@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="#ffffff"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kontakt1"
+        android:paddingStart="0dp"
+        android:textSize="14sp"
+        android:layout_gravity="start"
+        android:id="@+id/kontakt1"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Namn:*"
+                android:textStyle="bold"
+                android:paddingStart="0dp"
+                android:textSize="14sp"
+                android:id="@+id/kontakt_namn"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="nameGetFocus"
+                android:background="@xml/edittext_bg"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editText_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Namn..."
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Epost:"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp"
+                android:id="@+id/kontakt_epost"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@xml/edittext_bg"
+                android:onClick="emailGetFocus"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editText_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Epost..."
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meddelande:*"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp"
+                android:id="@+id/kontakt_mess"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:background="@xml/edittext_bg"
+                android:onClick="msgGetFocus"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editText_mess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Meddelande..."
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* Måste fyllas i för att kunna skicka"
+                android:paddingStart="5dp"
+                android:textSize="14sp"
+                android:layout_gravity="start"
+                android:id="@+id/kontakt_req"/>
+
+            <Button
+                android:text="Skicka"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:onClick="kontakt_send"
+                android:layout_marginTop="10dp"
+                android:background="@xml/button_layout"
+                android:drawablePadding="0dp"
+                android:textAllCaps="false"
+                android:id="@+id/ok_popup"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

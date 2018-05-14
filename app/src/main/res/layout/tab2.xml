@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="#ffffff"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bilder och online material"
+            android:textStyle="bold"
+            android:paddingStart="5dp"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kallatitel1"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla1"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla1_m"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="start"
+            android:id="@+id/kalla1"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla3"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla3_m"
+            android:textColor="@color/colorPrimary"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla3"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla2"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla2_m"
+            android:textColor="@color/colorPrimary"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla2"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla12"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla6_m"
+            android:textColor="@color/colorPrimary"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla12"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla13"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla13_m"
+            android:textColor="@color/colorPrimary"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla13"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Online material"
+            android:textStyle="bold"
+            android:paddingStart="5dp"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kallatitel2"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla4"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:onClick="kalla4_m"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="start"
+            android:id="@+id/kalla4"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla5"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:textSize="14sp"
+            android:onClick="kalla5_m"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="start"
+            android:id="@+id/kalla5"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Böcker"
+            android:textStyle="bold"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:textSize="18sp"
+            android:layout_gravity="start"
+            android:id="@+id/kallatitel3"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla6"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla6"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla7"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla7"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla8"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla8"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla9"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla9"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla10"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla10"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla10b"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla10b"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kalla11"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:id="@+id/kalla11"
+            android:background="#ffffff" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="lightgrey">#f0f0f0</color>
+
+    <color name="colorAccent">#669900</color>
+    <color name="colorPrimary">#669900</color>
+    <color name="colorPrimaryDark">#406000</color>
+
+    <color name="colorRight">#D1E4FF</color>
+    <color name="colorDes">#ffffee</color>
+    <color name="colorSettings">#d4dcc3</color>
+    <color name="colorDes2">#fcf7d1</color>
+
+
+
+</resources>

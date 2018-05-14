@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "781170279555",
+    "project_id": "svenska-vaxter"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781170279555:android:3285f6ecd2860ddf",
+        "android_client_info": {
+          "package_name": "se.baraluftvapen.hansson.flora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781170279555-f0555uo9fmbksf7ncq4vnumf28jgfi2p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "se.baraluftvapen.hansson.flora",
+            "certificate_hash": "279EE187CB869AF86FAD6A1A2F499B652C8D8446"
+          }
+        },
+        {
+          "client_id": "781170279555-7u25iehf8t4rgr2q0ncomfr0tqu9ksnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWUI3pKt11ZqWzgvom89NkM0vr9Xh9Zlg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

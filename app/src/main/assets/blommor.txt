@@ -1,0 +1,16 @@
+﻿Namn	Bild_id	Färger	Alternativa namn	Latinska namn	Regioner	Höjd	Familj	Utbredning	Blomstertid	Kategori	Beskrivning	Kronblad
+Adam och Eva	z1254	Gul Violett		Dactylorhiza sambucina 	12.a.bde.hijkl-	30	Orkideér	Längs Götalands- och Svelands östkust	5 6		Fridlyst	no
+Akleja	z176	Blå Lila	Akvileja	Aquilegia vulgaris	12abcdefghijklmnop.q.r.s.t.	100	Ranunkelväxter	Hela Sverige, men förekommer sparsammare i Norrland	5 6	Prydnadsväxter	Framför allt är det detta en prydnadsväxt, förekommer sällsynt förvildat. Blommorna på växten kan vara blåa, lila, violetta, vita eller i kombinationer av dessa färger.	6
+Alm	z366		Skogsalm	Ulmus glabra	12abcdefghijklmnopq.r.	3000	Almväxter	Upp till Jämtland och Ångermanland	4 5	Träd	Fröna har en nötaktig smak.	4
+Ask	z74			Fraxinus excelsior	12abcdefghijklmn.o.p.	3000	Syrenväxter	Götaland och Svealand	5	Träd	Beskrivning saknas	9
+Asp	z376			Populus tremula	12abcdefghijklmnopqrst-	3500	Videväxter	Hela Sverige	4 5	Träd	Beskrivning saknas	4
+Avenbok	z369		Annbok, Vitbok	Carpinus betulus	abcdef.h.j.k.m.	1000	Hasselväxter	Skåne, Halland, Blekinge, Öland och förekommer sällsynt i övriga Götaland och östra Svealand	5	Träd, Bok, Prydnadsväxter	Är det hårdaste av alla träslag som växer i Sverige.#Planteras även som prydnadshäck.	6
+Backglim	z340	Vit		Silene nutans	12abcdefghijklmn.pq-	50	Nejlikväxter	Götaland och östra Svealand	6 7	Smällglim	Bilden visar även Smällglim. Se även andra nejlikväxter, då vissa arter kan påminna om varandra	no
+Backklöver	z1255	Vit		Trifolium montanum 	12a.b.de.f.g.hijklm-	45	Ärtväxter	Östra Götaland och Sveland	6 7		Beskrivning saknas	no
+Backlök	z388	Violett		Allium oleraceum	12abcdefghijklm-	60	Lökväxter	Götaland och östra Svealand	7 8		Beskrivning saknas	6
+Backnejlika	z344	Röd	Ängsnejlika	Dianthus deltoides	12.abcdefghijklmnopqr.s.t.	30	Nejlikväxter	Hela Sverige	6 7 8		Bilden visar även Praktnejlika (Dianthus superbus) som sällsynt bara finns i Skåne och vid Haparanda.	5
+Backsippa	z171	Blå Violett Lila		Pulsatilla vulgaris	12.abcdefghij.klm-	25	Ranunkelväxter	Götaland och östra Svealand	4 5		Örten är fridlyst i Sverige.	6
+Backtimjan	z90	Violett Röd		Thymus serpyllum	12abcdefghijklmn.o.p.q.	10	Kransblommiga växter	Svealand och längs kusten till Ångermanland	7 8		Bladen är användbara som tesurrogat.	9
+Backtrav	z194	Vit		Arabidopsis thaliana	12abcdefghijklmno.p.q.r.s.t.	30	Korsblommiga växter	Hela Sverige. Förekommer sparsamt från Dalarna och uppåt	4 5 6		Beskrivning saknas	no
+Backvial	z317	Vit skär Violett	Skogsvial	Lathyrus sylvestris	12.abcdefghijklmno.	200	Ärtväxter	Upp till södra Dalarna	7 8		Stjälken ligger oftast längs marken eller klänger omkring i andra växter.	9
+Baldersbrå	z535	Vit	Surkulla	Tripleurospermum inodorum	12abcdefghijklmnopqrs.t.	70	Korgblommiga växter	Hela Sverige, dock sparsammare i norra Norrland	7 8 9	Kamomill, Prästkrage	Beskrivning saknas	6
