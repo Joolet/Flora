@@ -1,5 +1,4 @@
 package se.baraluftvapen.hansson.flora;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,18 +26,13 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
+
+    //address till onlinefilen
     private static final String DEBUG_TAG = "http://baraluftvapen.se/tmp/uploads/blom_update21.txt";
-    private static final String DEBUG_SHOULD = "http://baraluftvapen.se/tmp/should_update.txt";
 
     //nyBlomma innehåller alla uppdaterade blommor. varje position i denna sträng är en blomma innehållande alla egenskaper
     private String[] nyBlomma;
-    private String[] shoulda;
     private String[] nodata = new String[]{"nodata", "", "", ""};
-    private static final int TIME_DELAY = 2000;
-    private static long back_pressed;
-    private static final int REQUEST_CODE = 0x11;
-    private SharedPreferences settingsData;
-
     private LinkedList<Flower> flowerListi;                  //Lista med alla blommor
     private BufferedReader reader;                          //inläsare av datafil
     private String[] flowerElement = new String[13];        //Innehåller varje del-information av en blomma
@@ -49,84 +42,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
-        settingsData = getSharedPreferences("settings", 0);
-
-        /*
-        String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE"};
-        ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE);
-        */
-        if (!settingsData.getBoolean("offlinemode", false)) {
-            //kontrollerar om internetanslutning finns
-            ConnectivityManager connMgr = (ConnectivityManager)
-                    getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-            if (networkInfo != null && networkInfo.isConnected()) {
-                new DownloadWebpageTask().execute(DEBUG_TAG);   //hämta och uppdatera blomlistan
-                //new DownloadWebpageTask2().execute(DEBUG_SHOULD);   //hämta och uppdatera blomlistan
-
-            } else {
+       
+        //Hämtar ner updatefilen från servern
+        ConnectivityManager connMgr = (ConnectivityManager)
+        getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+          if (networkInfo != null && networkInfo.isConnected()) {
+             new DownloadWebpageTask().execute(DEBUG_TAG);   //hämta uppdateringsfilen
+          } else {
                 //inget internet,hämta inte filen
-            }
-        }
-        //Detta är ett test som tillåter snabbare laddning av blommor.
-        //resultat är bra och borde implementera detta någon gång framöver
-        //tyvärr är detta  ett större arbete
-        //CreateList();
-
+          }
     }
 
-    private class SortByName implements Comparator<Flower> {
-        @Override
-        public int compare(Flower o1, Flower o2) {
-            return o1.getName().toLowerCase().trim().compareTo(o2.getName().toLowerCase().trim());
-        }
-    }
-
+    //hämta ner onlinefil igen, körs varje gång huvudmeny körs
     @Override
     public void onResume() {
-        if (!settingsData.getBoolean("offlinemode", false))
-            new DownloadWebpageTask().execute(DEBUG_TAG);
+        new DownloadWebpageTask().execute(DEBUG_TAG);
         super.onResume();
     }
 
-    //dessa fyra metoderna nedan, startar en ny aktivitet, beronde på användarens val på huvudmenyn
+    //---------------------------------------------------------------------------------------------------------------
+    //Fem stycken metoder för varje menyval
+    //---------------------------------------------------------------------------------------------------------------
+    
     public void goBrowse(View view) {
         Intent i = new Intent(getApplicationContext(), Browse.class);
-        /*
-        boolean shoulda_update = false;
-
-        SharedPreferences explanation = getSharedPreferences("explanation", 0);
-
-        if (Integer.parseInt(shoulda[0].replace("\r", "")) > explanation.getInt("comment_update", 1) ) {
-            shoulda_update = true;
-            SharedPreferences.Editor editor = explanation.edit();
-            editor.putInt("comment_update", Integer.parseInt(shoulda[0].replace("\r", "")));
-            editor.apply();
-        }
-        */
-            if (nyBlomma != null) {
-                if (!settingsData.getBoolean("offlinemode", false))
+        i.putExtra("favo", false);
+        //om ny data finns om växter
+        if (nyBlomma != null) {
+            if (!settingsData.getBoolean("offlinemode", false))
             i.putExtra("update", nyBlomma); //skicka med de nya uppdaterade blommorna
-            i.putExtra("favo", false);
-                //i.putExtra("shoulda_update", shoulda_update);
-
-            } else {
+        } else {
             i.putExtra("update", nodata); //skicka med de nya uppdaterade blommorna
-            i.putExtra("favo", false);
-                //i.putExtra("shoulda_update", shoulda_update);
         }
         startActivity(i);
     }
 
     public void goFavo(View view) {
         Intent i = new Intent(getApplicationContext(), Browse.class);
+        i.putExtra("favo", true);
         if (nyBlomma != null) {
             if (!settingsData.getBoolean("offlinemode", false))
             i.putExtra("update", nyBlomma); //skicka med de nya uppdaterade blommorna
-            i.putExtra("favo", true);
         } else {
             i.putExtra("update", nodata); //skicka med de nya uppdaterade blommorna
-            i.putExtra("favo", true);
         }
         startActivity(i);
     }
@@ -153,34 +112,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    /*
-        @Override
-        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            if (requestCode == REQUEST_CODE) {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // save file
-                } else {
-                    Toast.makeText(getApplicationContext(), "PERMISSION_DENIED", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    */
-
-    //tryck två gånger bak för att avslsuta appen
-   /*
-    @Override
-    public void onBackPressed() {
-        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
-            super.onBackPressed();
-        } else {
-            Toast.makeText(getBaseContext(), "Tryck en gång till för att avsluta",
-                    Toast.LENGTH_SHORT).show();
-        }
-        back_pressed = System.currentTimeMillis();
-    }
-*/
     // Reads an InputStream and converts it to a String.
     private String readIt(InputStream stream, int len) throws IOException {
         Reader reader;
