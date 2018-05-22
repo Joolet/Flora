@@ -10,27 +10,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.PointF;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.FloatMath;
-import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -98,7 +88,7 @@ public class FlowerActivity extends AppCompatActivity {
     //online- och filhantering
     private String selectedFilePath;    //sökväg till txtfil på mobilen
     private String dataupload;          //sträng med vad som ska laddas upp till servern
-	private String ServerUrl = "http://domännamn.com/uploads/UploadToServer.php"; //url till php-fil
+	private String ServerUrl;
     private boolean uploaddatafile = false;
 
     //GUI
@@ -113,7 +103,6 @@ public class FlowerActivity extends AppCompatActivity {
     private TextView TV_category2;
     private TextView TV_category3;
     private TextView TV_googleLink;
-    private TextView TV_hardcore_editby;
     private ImageView imageView;
     private EditText ET_des;
     private EditText ET_com;
@@ -121,12 +110,10 @@ public class FlowerActivity extends AppCompatActivity {
     private CheckBox chk_name;
     private LinearLayout lay_com;
     private LinearLayout lay_com2;
-    private TextView TV_hardcore_private;
     private TextView TV_private;
     private Spinner spinner_petal;
     
     //blandad kompott
-    private FloatingActionButton FABa;        //redigera-meny
     private FabSpeedDial fabSpeedDial1;       //redigera-meny
     private PopupWindow pw;                   //popupp-fönster
     private String editActiveType = "default";
@@ -155,6 +142,7 @@ public class FlowerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = getApplicationContext();
         settings = getSharedPreferences("settings", 0);
+        ServerUrl = getString ( getResources().getIdentifier("url_up", "string", getPackageName()));
 
         //GUI
         TV_description = (TextView) findViewById(R.id.textView_description);
@@ -169,7 +157,6 @@ public class FlowerActivity extends AppCompatActivity {
         TV_category2 = (TextView) findViewById(R.id.category2);
         TV_category3 = (TextView) findViewById(R.id.category3);
         TV_private = (TextView) findViewById(R.id.text_private);
-        TV_hardcore_private = (TextView) findViewById(R.id.hardcore_private);
         spinner_petal = (Spinner) findViewById(R.id.spinner_petal);
 
         //Googlekonto
@@ -221,7 +208,6 @@ public class FlowerActivity extends AppCompatActivity {
         //----------------------------------------------------------------------------------------------------
         // den flytande menyn nere i hörnet
         fabSpeedDial1 = (FabSpeedDial) findViewById(R.id.fab_speed_dial);
-        FABa = (FloatingActionButton) findViewById(R.id.faba);           
         //meny alternativ för FAB-menyn
         fabSpeedDial1.setMenuListener(new SimpleMenuListenerAdapter() {
             @Override
@@ -255,7 +241,6 @@ public class FlowerActivity extends AppCompatActivity {
                             //byter FAB till den andra och byter till "EditText"
                             editActive = true;
                             fabSpeedDial1.setVisibility(View.INVISIBLE);
-                            //FABa.setVisibility(View.VISIBLE);
                             editActiveType = "report2";
                             sendDataPopUp("Rapportera fel");
                         } else {
@@ -331,7 +316,6 @@ public class FlowerActivity extends AppCompatActivity {
             //byter FAB till den andra och byter till "EditText"
             editActive = true;
             fabSpeedDial1.setVisibility(View.INVISIBLE);
-            //FABa.setVisibility(View.VISIBLE);
             sendDataPopUp("Redigera text");
         } else {
             Toast.makeText(context, "Ingen anslutning!", Toast.LENGTH_SHORT).show();
@@ -966,7 +950,6 @@ public class FlowerActivity extends AppCompatActivity {
             GoogleSignInAccount acct = result.getSignInAccount();
             SharedPreferences.Editor editor = settings.edit();
             editor.putString("inloggad", acct.getDisplayName());
-            editor.putString("inloggad_email", acct.getEmail());
             editor.putString("inloggad_id", acct.getId());
             editor.apply();
         } else {
@@ -1126,9 +1109,6 @@ public class FlowerActivity extends AppCompatActivity {
                 } catch (OutOfMemoryError e) {
                     Toast.makeText(context, "Memory Insufficient!", Toast.LENGTH_SHORT).show();
                 }
-                String serverResponseMessage = connection.getResponseMessage();
-                //Log.i(TAG, "Server Response is: " + serverResponseMessage + ": " + serverResponseCode);
-                //response code of 200 indicates the server status OK
                 if (serverResponseCode == 200) {
                     runOnUiThread(new Runnable() {
                         @Override

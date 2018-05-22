@@ -6,10 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.graphics.Point;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -33,9 +29,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,15 +41,9 @@ import static se.baraluftvapen.hansson.flora.R.id.main_filter;
 
 public class Browse extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private String[]          comments;
-    private static final int  TIME_DELAY = 2000;
-    private static long       back_pressed;
-    private static final int  REQUEST_CODE = 0x11;
-
     private GridView            gridView;
     private LinkedList<Flower>  flowerList;                                              //Lista med alla blommor. Denna lista kommer förbli orörd
     private LinkedList<Flower>  refinedList = new LinkedList<Flower>();                  //Lista med filtrerade blommor. Listan skapas och raderas på nytt för varje filtreringsval
-    private String[]            sendToFlowerActivityList = new String[]{"", "", "", ""}; //Sträng med alla blommor, som behövs för att säkerställa blomman visas/skickas i/till FlowerAcivity
     private Menu                menu;                                           //Ha menyn som instansvariablen eftersom menyn kommer att uppdateras
     private Boolean             favoriteActive;                                 //Har kolla på om vi är i bläddra-vyn eller i favorit-vyn
     private int                 currentMonthInt = 0;                            //Håller årets månad, 1 = januari, 12 = decmber
@@ -71,7 +58,6 @@ public class Browse extends AppCompatActivity implements NavigationView.OnNaviga
     private boolean             searchListActive = false;                       //Håller reda på om sökning har gjorts, så RefinedList visas istället för FlowerList
     private String              packageName;
     private int                 resId;                                          //Resource ID
-    private int                 k = 0;                                          //Räknare
     private int                 org_ny_blom_len = 0;                            //Sparar antal växter som har blivit uppdaterade via onlinefilen
 
     @Override
@@ -91,7 +77,7 @@ public class Browse extends AppCompatActivity implements NavigationView.OnNaviga
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
         registerForContextMenu(navigationView);
-        
+        packageName = getPackageName();
         
         CreateList(); //skapar listan
 
@@ -535,7 +521,6 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             //kommer tillbaka från Floweractivity --> visa vald familj/kategori
         } else if (requestCode == 2) {
             if (resultCode == RESULT_OK || resultCode == -1) {
-                packageName = getPackageName();
                 String dataBack = data.getStringExtra("viewFamily");
                 if (!(dataBack == null || dataBack.equals(""))) {
                     if (dataBack.equals("Fjällväxter") || dataBack.equals("Prydnadsväxter") || dataBack.equals("Träd") || dataBack.equals("Landskapsblommor") || dataBack.equals("Buskar") || dataBack.equals("Vattenväxter") || dataBack.equals("Klängväxter") || dataBack.equals("Fibblor") || dataBack.equals("Tistlar") || data.getBooleanExtra("toViewFamily", false)) {
@@ -615,7 +600,7 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             }
         }
     }
-    
+
 //-------------------------------------------------------------------------------------------------
     @Override
     public void onResume() {
@@ -625,7 +610,7 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-        
+
         //skulle det vara så att användaren redigerat "antal kronblad" i floweractivity,
         //så måste det kontrolleras så ändringen skall kunna ske lokalt
         String flowerdata_string;
@@ -909,6 +894,16 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             case R.id.rh:
                 filterSettings[2] = "h";
                 menu.findItem(R.id.filter_region).setTitle(getResources().getString(R.string.rh));
+                menu.findItem(R.id.filter_region).setIcon(R.drawable.ic_check_black_24dp);
+                break;
+            case R.id.ri:
+                filterSettings[2] = "i";
+                menu.findItem(R.id.filter_region).setTitle(getResources().getString(R.string.ri));
+                menu.findItem(R.id.filter_region).setIcon(R.drawable.ic_check_black_24dp);
+                break;
+            case R.id.rj:
+                filterSettings[2] = "j";
+                menu.findItem(R.id.filter_region).setTitle(getResources().getString(R.string.rj));
                 menu.findItem(R.id.filter_region).setIcon(R.drawable.ic_check_black_24dp);
                 break;
             case R.id.rk:
@@ -1557,9 +1552,8 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
         if (settings.getBoolean("jump_to_month", false) && !favoriteActive) {
             Calendar c = Calendar.getInstance();
             currentMonthInt = c.get(Calendar.MONTH) + 1;
-            
+
             //letar upp "id" på layouten, så rätt månad blir markerad i menyn framöver
-            packageName = getPackageName();
             resId = getResources().getIdentifier("m" + currentMonthInt, "string", packageName);
             String qfamily = getString(resId);
             currentMonthId = getResources().getIdentifier(qfamily, "id", packageName);
@@ -1572,12 +1566,11 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
                 filterSettings[1] = "B";
             else
                 filterSettings[1] = "C";
-              
+
             //menyn finns ännu inte och när menyn skapas kommer denna månad bli vald automatiskt
             if (menu != null) {
                 if (settings.getBoolean("jump_to_month", false) && !favoriteActive) {
                     menu.findItem(currentMonthId).setChecked(false);
-                    packageName = getPackageName();
                     resId = getResources().getIdentifier("n" + currentMonthInt, "string", packageName);
                     menu.findItem(R.id.filter_bloom).setTitle(getString(resId));
                     menu.findItem(R.id.filter_bloom).setIcon(R.drawable.ic_check_black_24dp);
@@ -1587,7 +1580,6 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
 
         //Ska vyn filtrera automatiskt till vald region?
         if (!(settings.getString("jump_to_region", "no").equals("no")) && !favoriteActive) {
-            packageName = getPackageName();
             resId = getResources().getIdentifier(settings.getString("jump_to_region", "no"), "string", packageName);
             currentRegionChar = getString(resId);
             currentRegionId = getResources().getIdentifier("r" + currentRegionChar, "id", packageName);
@@ -1605,14 +1597,14 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-        
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         assert drawer != null;
         //är sidomeny öppen, så stäng bara den och gör inget mer
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } 
-        
+        }
+
         //nollställ filtrering om bakåttrycks eller avsluta activiteten
         else {
             // är vi i defaultläge avslutas aktiviteten. Detta villkor är definitionen på dafualtläge i bläddringsvyn
@@ -1621,16 +1613,16 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             if (isFlowerListActive() || (((filterSettings[1].equals("" + currentMonthInt)) || (currentMonthInt <= 12) || filterSettings[1].equals("")) && filterSettings[0].equals("") && filterSettings[3].equals("")
                     && !searchListActive && settings.getString("sort", "az").equals("az"))) {
                 super.onBackPressed();
-            } 
+            }
             // om listan är filtrerad på något sätt --> nollställ allt
             else {
                 searchListActive = false;
                 resetFilter();
-                
+
                 //inget filter är aktivt
                 if (isFlowerListActive()) {
                     DisplayList(flowerList);    //presentera blommorna
-                } 
+                }
                 //annars har användaren gjort inställningar i settingsactivity
                 else {
                     RefineList();
@@ -1639,7 +1631,7 @@ Går igenom blomlistan för att matcha den som trycktes på, sedan skickas all d
             }
         }
     }
-    
+
 /*---------------------------------------------------------------------------------------------------------
 Skapar den översta menyn
 ---------------------------------------------------------------------------------------------------------
@@ -1668,7 +1660,7 @@ Hantering sökning på växt
         // Define the listener
         MenuItemCompat.OnActionExpandListener expandListener = new MenuItemCompat.OnActionExpandListener() {
             //När användaren har trycket på sök eller stängt ner sökfunktionen
-            //presentera slutresulatatet. strängen "latestSearch" innehåller alla inmatade tecken 
+            //presentera slutresulatatet. strängen "latestSearch" innehåller alla inmatade tecken
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
                 if (latestSearch != null) {
@@ -1679,7 +1671,7 @@ Hantering sökning på växt
                     Boolean show_lat = settingsData.getBoolean(("lat"), true);
                     Boolean show_fam = settingsData.getBoolean(("fam"), true);
                     refinedList.clear(); //rensar listan först och så den inte bara adderar
-                    
+
                     //söker efter växer
                     for (Flower thisFlower : flowerList
                             ) {
@@ -1774,14 +1766,14 @@ Hantering sökning på växt
                         }
                     }
                     //eftersom refinedlist har ändrats i grunden, behövs alla filter nollställas
-                    resetFilter(); 
-                    
+                    resetFilter();
+
                     //presentera sökreulatatet för varje ifyllt tecken
-                    DisplayList(searchList);  
-                    
-                    //spara strängen som användaren har skrivit in, 
+                    DisplayList(searchList);
+
+                    //spara strängen som användaren har skrivit in,
                     //så om sökningen är klar lågger strängen i latestSearch annars så kommer strängen s ersättas med ny tycken
-                    latestSearch = s;         
+                    latestSearch = s;
                 }
                 searchListActive = true; //är fortfarnde active, om användaren vill filtrerar/sortera sökresultatet
                 return false; //stäng ner sökfunktionen
@@ -1792,19 +1784,17 @@ Hantering sökning på växt
 //----------------------------------------------------------------------------------------------
 //om "hoppa till månad" är aktiv behöver den månaden bli ikryssat i menyn
 //----------------------------------------------------------------------------------------------
-        
+
         if (settings.getBoolean("jump_to_month", false) && !favoriteActive) {
             menu.findItem(currentMonthId).setChecked(false);
-            packageName = getPackageName();
             resId = getResources().getIdentifier("n" + currentMonthInt, "string", packageName);
             menu.findItem(R.id.filter_bloom).setTitle(getString(resId));
             menu.findItem(R.id.filter_bloom).setIcon(R.drawable.ic_check_black_24dp);
         }
-        
+
         //om "hoppa till region" är aktiv behöver den regionen bli vald i menyn
         if (!currentRegionChar.equals("no") && !favoriteActive) {
             menu.findItem(currentRegionId).setChecked(false);
-            packageName = getPackageName();
             resId = getResources().getIdentifier("r" + currentRegionChar, "string", packageName);
             menu.findItem(R.id.filter_region).setTitle(getString(resId));
             menu.findItem(R.id.filter_region).setIcon(R.drawable.ic_check_black_24dp);
@@ -1818,10 +1808,10 @@ Hantering sökning på växt
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-//hem        
+//hem
         if (id == R.id.nav_home) {
             finish();
-        } 
+        }
 //gå till browse --> gör inget om vi redan är i browse annars deaktivera favorite-vyn och starta om bbrowseactivity
         else if (id == R.id.nav_browse) {
             if (favoriteActive) {
@@ -1830,19 +1820,19 @@ Hantering sökning på växt
                 i.putExtra("favo", false);
                 startActivity(i);
             }
-        } 
-//settings        
+        }
+//settings
         else if (id == R.id.nav_settings) {
             Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
             SharedPreferences settingsData = getSharedPreferences("settings", 0);
             //hmm, kan deta vara defaultläge med 4 kolum? minnet är bra men kort :)
-            int starting_kol = settingsData.getInt("antalkolumner", 4); 
+            int starting_kol = settingsData.getInt("antalkolumner", 4);
             i.putExtra("start", starting_kol);
             //går man till Settingsactivity från browse kommer användaren inte kunna redigera region eller hoppa till aktuell månad
-            i.putExtra("fromBrowse", true);       
+            i.putExtra("fromBrowse", true);
             startActivityForResult(i, 1);
-        } 
-//gå till favoriter --> aktivera favorit-vyn och avsluta browseactivity för att sedan starta den igen    
+        }
+//gå till favoriter --> aktivera favorit-vyn och avsluta browseactivity för att sedan starta den igen
         else if (id == R.id.nav_favo) {
             if (!favoriteActive) {
                 finish();
@@ -1850,8 +1840,8 @@ Hantering sökning på växt
                 i.putExtra("favo", true);
                 startActivity(i);
             }
-        } 
-//starta Quiz        
+        }
+//starta Quiz
         else if (id == R.id.nav_quiz) {
             Intent i = new Intent(getApplicationContext(), QuizMenu.class);
             startActivity(i);
@@ -1888,7 +1878,7 @@ Hantering sökning på växt
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("sort", "az");
         editor.apply();
-        
+
         //om hoppa till aktuell månad är aktiv vid reset
         if (settings.getBoolean("jump_to_month", false) && !searchListActive && !favoriteActive) {
 
@@ -1902,17 +1892,15 @@ Hantering sökning på växt
                 filterSettings[1] = "C";
 
             menu.findItem(currentMonthId).setChecked(false);
-            packageName = getPackageName();
             resId = getResources().getIdentifier("n" + currentMonthInt, "string", packageName);
             menu.findItem(R.id.filter_bloom).setTitle(getString(resId));
             menu.findItem(R.id.filter_bloom).setIcon(R.drawable.ic_check_black_24dp);
         }
 
-        //om region har valts, när resetsmetoden ska exekuveras 
+        //om region har valts, när resetsmetoden ska exekuveras
         if (!currentRegionChar.equals("no") && !searchListActive && !favoriteActive) {
             filterSettings[2] = currentRegionChar;
             menu.findItem(currentRegionId).setChecked(false);
-            packageName = getPackageName();
             resId = getResources().getIdentifier("r" + currentRegionChar, "string", packageName);
             menu.findItem(R.id.filter_region).setTitle(getString(resId));
             menu.findItem(R.id.filter_region).setIcon(R.drawable.ic_check_black_24dp);

@@ -21,29 +21,4 @@
             android:icon="@drawable/ic_settings_white_24dp"
             android:title="Inställningar" />
 
-
-    <!--
-    <item android:title="Filter"
-        app:showAsAction="always">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share"
-                app:showAsAction="never"/>
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-            <item
-                android:title="Shareaaa"
-                android:id="@+id/spinner"
-                app:showAsAction="always"
-                android:orderInCategory="1"
-                android:actionViewClass="android.widget.Spinner" />
-        </menu>
-    </item>
--->
-
-
 </menu>

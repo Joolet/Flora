@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -35,12 +34,13 @@ public class TabLayoutActivity extends AppCompatActivity {
     private Context context;
     private String vote = "";				//Användarens röstning
     private String selectedFilePath;        //sökväg till textfilen som ska laddas upp
-	private String ServerUrl = "http://domännamn.com/uploads/UploadToServer.php"; //url till php-fil
+	private String ServerUrl;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_layout);					
+        setContentView(R.layout.activity_tab_layout);
+        ServerUrl = getString ( getResources().getIdentifier("url_up", "string", getPackageName()));
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         TabsPagerAdapter adapter = new TabsPagerAdapter(getSupportFragmentManager());	

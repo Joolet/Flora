@@ -335,7 +335,6 @@ public class SettingsActivity extends AppCompatActivity {
             GoogleSignInAccount acct = result.getSignInAccount();
             SharedPreferences.Editor editor = settingsData.edit();
             editor.putString("inloggad", acct.getDisplayName());		//lagra användarens namn
-            editor.putString("inloggad_email", acct.getEmail());		//lagra användarens epost
             editor.putString("inloggad_id", acct.getId());				//lagra användarens unika id
             editor.apply();
             signInButton.setVisibility(View.GONE);
@@ -362,7 +361,6 @@ public class SettingsActivity extends AppCompatActivity {
                         mStatusTextView.setText("Utloggad");
                         SharedPreferences.Editor editor = settingsData.edit();
                         editor.putString("inloggad", "no");				//logga ut användaren från minnet
-                        editor.putString("inloggad_email", "no");		//logga ut användaren från minnet
                         editor.putString("inloggad_id", "no");			//logga ut användaren från minnet
                         editor.apply();
                         signInButton.setVisibility(View.VISIBLE);

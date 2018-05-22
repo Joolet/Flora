@@ -178,15 +178,7 @@ public class QuizMenu extends AppCompatActivity {
     }
 
     private void SetUpLists() {
-        categorys.add("Välj kategori:");
-        categorys.add("Buskar (35)");
-        categorys.add("Fibblor (12)");
-        categorys.add("Fjällväxter (28)");
-        categorys.add("Klängväxter (7)");
-        categorys.add("Prydnadsväxter (43)");
-        categorys.add("Tistlar (12)");
-        categorys.add("Träd (31)");
-        categorys.add("Vattenväxter (18)");
+        categorys.add(getResources().getStringArray(R.array.cat_array_temp).toString());
 
         all_no_flowers.add("Blanda alla, välj antal:");
         all_no_flowers.add("10 st");
@@ -196,7 +188,6 @@ public class QuizMenu extends AppCompatActivity {
         all_no_flowers.add("< 506 st");
 
         SharedPreferences favoData = getSharedPreferences("favolist", 0);
-
 
         for (Flower thisFlower : flowerList
                 ) {
@@ -266,7 +257,9 @@ public class QuizMenu extends AppCompatActivity {
 
     private void setupSpinners() {
         SharedPreferences settingsData = getSharedPreferences("settings", 0);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categorys);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.cat_array_temp, android.R.layout.simple_spinner_item);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assert spinner_cat != null;
         spinner_cat.setAdapter(adapter);

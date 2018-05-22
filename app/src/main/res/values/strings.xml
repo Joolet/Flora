@@ -1,12 +1,10 @@
 <resources>
-    <string name="app_name">Flora</string>
+
+    <string name="url_down">http://domännamn.com/uploads/</string>
+    <string name="url_up">http://domännamn.com/uploads/UploadToServer.php</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="red">red</string>
-    <string name="blue">blue</string>
-    <string name="orange">orange</string>
 
     <!-- filtermeny i browseactivity-->
     <string name="pick_month">Välj blomningstid</string>
@@ -316,7 +314,96 @@
         <item>Östergötalands län</item>
     </string-array>
 
-    <!-- Används till QUIZ för spinnern -->
+    <!-- Används till QUIZ för spinnern, liteversion -->
+    <string-array name="cat_array_temp">
+        <item>Välj kategori:</item>
+        <item>Buskar (0)</item>
+        <item>Fibblor (0)</item>
+        <item>Fjällväxter (0)</item>
+        <item>Klängväxter (0)</item>
+        <item>Prydnadsväxter (2)</item>
+        <item>Tistlar (0)</item>
+        <item>Träd (4)</item>
+        <item>Vattenväxter (0)</item>
+    </string-array>
+
+    <!-- Används till QUIZ för spinnern, fullversion -->
+    <string-array name="cat_array">
+        <item>Välj kategori:</item>
+        <item>Buskar (35)</item>
+        <item>Fibblor (12)</item>
+        <item>Fjällväxter (28)</item>
+        <item>Klängväxter (7)</item>
+        <item>Prydnadsväxter (43)</item>
+        <item>Tistlar (12)</item>
+        <item>Träd (31)</item>
+        <item>Vattenväxter (18)</item>
+    </string-array>
+
+    <!-- Används till kronblad, spinner -->
+    <string-array name="flower_petal">
+        <item>Upp till 3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6+</item>
+        <item>Varierar</item>
+        <item>Asymmetrisk eller annat</item>
+        <item>Saknar/syns ej</item>
+    </string-array>
+
+    <!-- Omvandligar mellan Län och länets ID -->
+    <string name="Gotlands">1</string>
+    <string name="Skane">a</string>
+    <string name="Blekinge">b</string>
+    <string name="Hallands">c</string>
+    <string name="Kalmar">d</string>
+    <string name="Kronobergs">e</string>
+    <string name="Vastra">f</string>
+    <string name="Jonkopings">g</string>
+    <string name="Ostergotalands">h</string>
+    <string name="Orebro">i</string>
+    <string name="Sodermanlands">j</string>
+    <string name="Stockholms">k</string>
+    <string name="Uppsala">l</string>
+    <string name="Vastmanlands">m</string>
+    <string name="Varmlands">n</string>
+    <string name="Dalarnas">o</string>
+    <string name="Gavleborgs">p</string>
+    <string name="Vasternorrlands">q</string>
+    <string name="Jamtlands">r</string>
+    <string name="Vasterbottens">s</string>
+    <string name="Norrbottens">t</string>
+
+    <string name="info3">För att få den senaste version av databasen (all textinformation om en blomma), krävs internetuppkoppling. Senaste databasversionen kommer alltid vara inkluderad i en app-uppdatering.</string>
+    <string name="info2">Appen har inspirerats av Wikipedia, planen är att användare som du ska kunna redigera all information om en blomma för att få en så bra databas som möjligt. För tillfället är det bara möjligt att redigera blommans beskrivning. Beroende på hur populärt det blir med bidragandet, så kommer man även i framtiden kunna redigera all information om en blomma samt lägga till bilder och eventuellt en topplista vem som har bidragit mest. </string>
+    <string name="info1">Tack för att du har laddat ner och installerat denna app. Det finns mer än 500 stycken växter i denna app med illustrerade bilder.</string>
+    <string name="info4">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
+    <string name="report">Händer det att appen kraschar, så var snäll och tryck rapportera så jag kan åtgärda problemet till nästa uppdatering.</string>
+    <string name="info6">Jag som har gjort appen har inga kunskaper inom botanik och att det finns risk att förekommer fel i växternas egenskaper eller beskrivningar.</string>
+    <string name="info5">Appen är först och främst utvecklad för Android 5.0 och uppåt och för upplösningar från 720p. Upplever du att appen inte fungerar korrekt eller att bilder ser konstiga ut, så hör gärna av dig.</string>
+    <string name="info9">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
+
+    <string name="appversion">App-version 1.20</string>
+
+    <string name="kalla1">\u2022 Franz Eugen Köhler, Köhlers Medizinal-Pflanzen</string>
+    <string name="kalla2">\u2022 Jacob Sturm, Flora von Deutschland in Abbildungen nach der Natur</string>
+    <string name="kalla3">\u2022 Carl Lindman, Bilder ur Nordens flora</string>
+    <string name="kalla4">\u2022 SLU ArtDatabanken, www.artdatabanken.se/</string>
+    <string name="kalla5">\u2022 Den virtuella floran, http://linnaeus.nrm.se/flora/</string>
+    <string name="kalla6">\u2022 Ivar Elvers, Vår flora i färg</string>
+    <string name="kalla7">\u2022 Nordstedts, Lilla fälthandboken Träd och Buskar</string>
+    <string name="kalla8">\u2022 Nordstedts, Lilla fälthandboken Flora</string>
+    <string name="kalla9">\u2022 Bolin von Post, Floran i färg</string>
+    <string name="kalla10">\u2022 Björn Ursing, Svenska växter, Panergamer</string>
+    <string name="kalla10b">\u2022 Björn Ursing, Svenska växter, Kryptogamer</string>
+    <string name="kalla11">\u2022 Nybloms, Hälsoflora</string>
+    <string name="kalla12">\u2022 Jan Kops, Flora Batava</string>
+    <string name="kalla13">\u2022 J.C. Krauss, Afbeeldingen der artseny-gewassen met dervelver Nederduitsche</string>
+
+    <string name="kontakt1">Här nedan kan du kontakta mig angånde appen. Berätta vad du tycker, alla förslag är välkomna, både ris och ros.</string>
+
+    <!-- Används till QUIZ för spinnern
+        //Gammal version
     <string-array name="family_array">
         <item>Välj familj</item>
         <item>Almväxter</item>
@@ -408,115 +495,6 @@
         <item>Vänderotväxter</item>
         <item>Ärtväxter</item>
     </string-array>
-
-    <!-- Används till QUIZ för spinnern -->
-    <string-array name="cat_array">
-        <item>Välj kategori</item>
-        <item>Buskar</item>
-        <item>Fibblor</item>
-        <item>Fjällväxter</item>
-        <item>Klängväxter</item>
-        <item>Prydnadsväxter</item>
-        <item>Tistlar</item>
-        <item>Träd</item>
-        <item>Vattenväxter</item>
-    </string-array>
-
-    <!-- Används till kronblad, spinner -->
-    <string-array name="flower_petal">
-        <item>Upp till 3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6+</item>
-        <item>Varierar</item>
-        <item>Asymmetrisk eller annat</item>
-        <item>Saknar/syns ej</item>
-    </string-array>
-
-    <!-- Omvandligar mellan månadskod och månad -->
-    <string name="m1">jan</string>
-    <string name="m2">feb</string>
-    <string name="m3">mar</string>
-    <string name="m4">apr</string>
-    <string name="m5">may</string>
-    <string name="m6">jun</string>
-    <string name="m7">jul</string>
-    <string name="m8">aug</string>
-    <string name="m9">sep</string>
-    <string name="m10">oct</string>
-    <string name="m11">nov</string>
-    <string name="m12">dec</string>
-    <string name="n1">Januari</string>
-    <string name="n2">Februari</string>
-    <string name="n3">Mars</string>
-    <string name="n4">April</string>
-    <string name="n5">Maj</string>
-    <string name="n6">Juni</string>
-    <string name="n7">Juli</string>
-    <string name="n8">Augusti</string>
-    <string name="n9">September</string>
-    <string name="n10">Oktober</string>
-    <string name="n11">November</string>
-    <string name="n12">December</string>
-
-    <!-- Omvandligar mellan Län och länets ID -->
-    <string name="Gotlands">1</string>
-    <string name="Skane">a</string>
-    <string name="Blekinge">b</string>
-    <string name="Hallands">c</string>
-    <string name="Kalmar">d</string>
-    <string name="Kronobergs">e</string>
-    <string name="Vastra">f</string>
-    <string name="Jonkopings">g</string>
-    <string name="Ostergotalands">h</string>
-    <string name="Orebro">i</string>
-    <string name="Sodermanlands">j</string>
-    <string name="Stockholms">k</string>
-    <string name="Uppsala">l</string>
-    <string name="Vastmanlands">m</string>
-    <string name="Varmlands">n</string>
-    <string name="Dalarnas">o</string>
-    <string name="Gavleborgs">p</string>
-    <string name="Vasternorrlands">q</string>
-    <string name="Jamtlands">r</string>
-    <string name="Vasterbottens">s</string>
-    <string name="Norrbottens">t</string>
-
-
-    <string name="info3">För att få den senaste version av databasen (all textinformation om en blomma), krävs internetuppkoppling. Senaste databasversionen kommer alltid vara inkluderad i en app-uppdatering.</string>
-    <string name="info2">Appen har inspirerats av Wikipedia, planen är att användare som du ska kunna redigera all information om en blomma för att få en så bra databas som möjligt. För tillfället är det bara möjligt att redigera blommans beskrivning. Beroende på hur populärt det blir med bidragandet, så kommer man även i framtiden kunna redigera all information om en blomma samt lägga till bilder och eventuellt en topplista vem som har bidragit mest. </string>
-
-    <string name="info1">Tack för att du har laddat ner och installerat denna app. Det finns mer än 500 stycken växter i denna app med illustrerade bilder.</string>
-    <string name="info4">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
-    <string name="report">Händer det att appen kraschar, så var snäll och tryck rapportera så jag kan åtgärda problemet till nästa uppdatering.</string>
-    <string name="info6">Jag som har gjort appen har inga kunskaper inom botanik och att det finns risk att förekommer fel i växternas egenskaper eller beskrivningar.</string>
-    <string name="info5">Appen är först och främst utvecklad för Android 5.0 och uppåt och för upplösningar från 720p. Upplever du att appen inte fungerar korrekt eller att bilder ser konstiga ut, så hör gärna av dig.</string>
-
-    <string name="info9">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
-
-
-    <string name="appversion">App-version 1.20</string>
-    <string name="dataversion">Databas-version 1.06</string>
-
-    <string name="kalla1">\u2022 Franz Eugen Köhler, Köhlers Medizinal-Pflanzen</string>
-    <string name="kalla2">\u2022 Jacob Sturm, Flora von Deutschland in Abbildungen nach der Natur</string>
-    <string name="kalla3">\u2022 Carl Lindman, Bilder ur Nordens flora</string>
-    <string name="kalla4">\u2022 SLU ArtDatabanken, www.artdatabanken.se/</string>
-    <string name="kalla5">\u2022 Den virtuella floran, http://linnaeus.nrm.se/flora/</string>
-    <string name="kalla6">\u2022 Ivar Elvers, Vår flora i färg</string>
-    <string name="kalla7">\u2022 Nordstedts, Lilla fälthandboken Träd och Buskar</string>
-    <string name="kalla8">\u2022 Nordstedts, Lilla fälthandboken Flora</string>
-    <string name="kalla9">\u2022 Bolin von Post, Floran i färg</string>
-    <string name="kalla10">\u2022 Björn Ursing, Svenska växter, Panergamer</string>
-    <string name="kalla10b">\u2022 Björn Ursing, Svenska växter, Kryptogamer</string>
-    <string name="kalla11">\u2022 Nybloms, Hälsoflora</string>
-    <string name="kalla12">\u2022 Jan Kops, Flora Batava</string>
-    <string name="kalla13">\u2022 J.C. Krauss, Afbeeldingen der artseny-gewassen met dervelver Nederduitsche</string>
-
-    <string name="kontakt1">Här nedan kan du kontakta mig angånde appen. Berätta vad du tycker, alla förslag är välkomna, både ris och ros.</string>
-    <string name="title_activity_quiz">QuizActivity</string>
-
-    //apt737 --> winter00
-    //Det är trevligt att personer har gett bra betyg i Play butiken, det sporrar mig att fortsätta uppdatera appen.
+-->
 
 </resources>
