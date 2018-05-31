@@ -1,7 +1,7 @@
 /*
 	Vertyg som visar bild+namn i Gridview-layouten under browse
 */
-package se.baraluftvapen.hansson.flora.adapter;
+package se.baraluftvapen.hansson.flora;
 
 import android.content.Context;
 import android.content.SharedPreferences;

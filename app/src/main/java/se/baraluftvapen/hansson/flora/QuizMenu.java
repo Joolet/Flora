@@ -1,5 +1,7 @@
+/*
+    Hanterar huvudmenyn av frågesporten
+*/
 package se.baraluftvapen.hansson.flora;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -16,12 +18,10 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -30,41 +30,39 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import static se.baraluftvapen.hansson.flora.R.array.region_array;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public class QuizMenu extends AppCompatActivity {
 
-    private String category_val = "";
-    private String language = "";
-    private LinkedList<Flower> flowerList;
+    private String category_val = "";                               //växtlista val
+    private String language = "";                                   //språk val
+    private LinkedList<Flower> flowerList;                          //alla växter i en lista
     private HashMap<String, Integer> nr_fam = new HashMap<String, Integer>();
-    private HashMap<String, Integer> nr_cat = new HashMap<String, Integer>();
     List<String> familys = new LinkedList<>();
     List<String> superfamilys = new LinkedList<>();
-    List<String> trashfamily = new LinkedList<>();
-    List<String> categorys = new ArrayList<String>();
-    List<String> all_no_flowers = new ArrayList<String>();
-    private String selected_region;
-    private Spinner spinner_cat;
-    private Spinner spinner_fam;
-    private Spinner spinner_all;
-    private Spinner spinner_region;
-    private RadioButton radiofam;
-    private RadioButton radiocat;
-    private RadioButton radioall;
-    private RadioButton radiofav;
-    private RadioButton radioland;
-    private TextView favor;
-    private TextView landor;
-    int no_favos = 0;
-    private String type = "list";
+    List<String> trashfamily = new LinkedList<>();                  //innehåller de växter som bara tillhör 3 eller mindre familjer
+    List<String> categorys = new ArrayList<String>();                   //innehåller kategorier som finns
+    List<String> all_no_flowers = new ArrayList<String>();              //innehåller strängarna till spinnern "blanda alla växter"
+    private String selected_region;         //vald region
+    private Spinner spinner_cat;            //kategori
+    private Spinner spinner_fam;            //familj
+    private Spinner spinner_all;            //blanda alla
+    private Spinner spinner_region;         //region
+    private RadioButton radiofam;           //familj
+    private RadioButton radiocat;           //kategori
+    private RadioButton radioall;           //blanda alla
+    private RadioButton radiofav;           //favoriter
+    private RadioButton radioland;              //landskapsblommor
+    private TextView favor;                     //text som visar valet Favoriter + antalet
+    private TextView landor;                    //Landskapsblommor, texten innan radiobutton
+    int no_favos = 0;                                   //antal växter i favoriter
+    private String type = "list";                       //val av quiztyp, lista eller bilder
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_menu);
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -90,72 +88,51 @@ public class QuizMenu extends AppCompatActivity {
         spinner_all.setClickable(false);
 
         setupSpinners();
-
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //när man trycker på starta quiz --> startar nästa aktivitet
     public void goNext(View view) {
-        if (type.equals("list")) {
-            if (category_val.equals("Blanda alla, välj antal:") || category_val.equals("Välj familj:") || category_val.equals("Välj kategori:") || category_val.equals("favo_err")) {
-                if (category_val.equals("favo_err"))
-                    Toast.makeText(getApplicationContext(), "Du måste ha minst fyra växter i favoriter för att starta", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "Välj vad du vill träna på", Toast.LENGTH_SHORT).show();
-            } else {
-                Intent i = new Intent(getApplicationContext(), QuizActivity.class);
-
-                if (radiocat.isChecked() || radiofam.isChecked()) {
-                    //är det familjen som ska visas behövs det ta bort det sista i strängen som visar hur många blommor det finns
-                    i.putExtra("choice", category_val.substring(0, category_val.length() - 4).trim());
-                }
-                //skickar vidare bara talet
-                else if (radioall.isChecked()) {
-                    i.putExtra("choice", category_val.substring(0, category_val.length() - 2).trim());
-                } else
-                    i.putExtra("choice", category_val);
-
-                i.putExtra("id", trashfamily.toString()); //skickar alltid in trashfamily, behövs egentligen inte
-                i.putExtra("show_cat", radiofam.isChecked());
-                i.putExtra("show_fam", radiocat.isChecked());
-                i.putExtra("show_all", radioall.isChecked());
-                i.putExtra("show_fav", radiofav.isChecked());
-                i.putExtra("show_land", radioland.isChecked());
-                i.putExtra("region", selected_region);
-                i.putExtra("language", language);
-                startActivity(i);
-            }
+        //kontrollerar om ingaet val gjorts
+        if (category_val.equals("Blanda alla, välj antal:") || category_val.equals("Välj familj:") || category_val.equals("Välj kategori:") || category_val.equals("favo_err")) {
+            if (category_val.equals("favo_err"))
+                Toast.makeText(getApplicationContext(), "Du måste ha minst fyra växter i favoriter för att starta", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(getApplicationContext(), "Välj vad du vill träna på", Toast.LENGTH_SHORT).show();
         } else {
-            if (category_val.equals("Blanda alla, välj antal:") || category_val.equals("Välj familj:") || category_val.equals("Välj kategori:") || category_val.equals("favo_err")) {
-                if (category_val.equals("favo_err"))
-                    Toast.makeText(getApplicationContext(), "Du måste ha minst fyra växter i favoriter för att starta", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "Välj vad du vill träna på", Toast.LENGTH_SHORT).show();
+
+            //se typ av quiz som ska startas
+            Intent i;
+            if (type.equals("list")) {
+                i = new Intent(getApplicationContext(), QuizActivity.class);
             } else {
-                Intent i = new Intent(getApplicationContext(), QuizPic.class);
-
-                if (radiocat.isChecked() || radiofam.isChecked()) {
-                    //är det familjen som ska visas behövs det ta bort det sista i strängen som visar hur många blommor det finns
-                    i.putExtra("choice", category_val.substring(0, category_val.length() - 4).trim());
-                }
-                //skickar vidare bara talet
-                else if (radioall.isChecked()) {
-                    i.putExtra("choice", category_val.substring(0, category_val.length() - 2).trim());
-                } else
-                    i.putExtra("choice", category_val);
-
-                i.putExtra("id", trashfamily.toString()); //skickar alltid in trashfamily, behövs egentligen inte
-                i.putExtra("show_cat", radiofam.isChecked());
-                i.putExtra("show_fam", radiocat.isChecked());
-                i.putExtra("show_all", radioall.isChecked());
-                i.putExtra("show_fav", radiofav.isChecked());
-                i.putExtra("show_land", radioland.isChecked());
-                i.putExtra("region", selected_region);
-                i.putExtra("language", language);
-                startActivity(i);
+                i = new Intent(getApplicationContext(), QuizPic.class);
             }
+
+            if (radiocat.isChecked() || radiofam.isChecked()) {
+                //är det familjen som ska visas behövs det ta bort det sista i strängen som visar hur många blommor det finns
+                i.putExtra("choice", category_val.substring(0, category_val.length() - 4).trim());
+            }
+            //skickar vidare bara talet
+            else if (radioall.isChecked()) {
+                i.putExtra("choice", category_val.substring(0, category_val.length() - 2).trim());
+            } else
+                i.putExtra("choice", category_val);
+
+            i.putExtra("id", trashfamily.toString()); //skickar alltid in trashfamily, behövs egentligen inte
+            i.putExtra("show_cat", radiofam.isChecked());
+            i.putExtra("show_fam", radiocat.isChecked());
+            i.putExtra("show_all", radioall.isChecked());
+            i.putExtra("show_fav", radiofav.isChecked());
+            i.putExtra("show_land", radioland.isChecked());
+            i.putExtra("region", selected_region);
+            i.putExtra("language", language);
+            startActivity(i);
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//skapa lista med alla växter
     private void CreateList() {
         flowerList = new LinkedList<Flower>();
         try {
@@ -177,6 +154,8 @@ public class QuizMenu extends AppCompatActivity {
         flowerList.removeLast();
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Det är ju sjukt korkat att ha hårdkodade strängar din tröga jävel
     private void SetUpLists() {
         categorys.add(getResources().getStringArray(R.array.cat_array_temp).toString());
 
@@ -238,7 +217,7 @@ public class QuizMenu extends AppCompatActivity {
             }
         }
 
-        //två statiska val som ligger överst
+        //två statiska val som ligger överst. Men va fan, här ligger fler hårdkodade strängar!!!
         superfamilys.add(0, "Välj familj:");
         superfamilys.add(1, "Övriga familjer (87)");
         favor.setText("Mina favoriter (" + no_favos + ")");

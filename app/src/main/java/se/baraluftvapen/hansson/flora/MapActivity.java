@@ -1,5 +1,7 @@
+/*
+    Visar karta på utbredningsområde i Sverige
+*/
 package se.baraluftvapen.hansson.flora;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -27,8 +29,7 @@ public class MapActivity extends AppCompatActivity {
         String area = i.getExtras().getString("maparea");
         getSupportActionBar().setTitle("Utbredning, " + i.getExtras().getString("flowername"));
 
-
-
+        //varje län är motsvarar en bild
         ImageView iva12 = (ImageView) findViewById(R.id.a12);
         ImageView iva = (ImageView) findViewById(R.id.a);
         ImageView ivb = (ImageView) findViewById(R.id.b);
@@ -52,17 +53,20 @@ public class MapActivity extends AppCompatActivity {
         ImageView ivt = (ImageView) findViewById(R.id.t);
         ImageView outline = (ImageView) findViewById(R.id.outline);
 
+        //hämta användarens upplösning
         WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int width = size.x;
 
+        //såg konstigt ut i 1440p, så lite redigering
         if (width>=1080){
            outline.setPadding(0,0,0,70);
             iva.setPadding(0,0,0,70);
         }
 
+        //grön färg är default sen innan. Byt här till röd eller gul beronde om växt är sällsynt
         if (area.contains("2")) {
             if ((area.charAt(area.indexOf("1") + 1)) == '.') {
                 iva12.setImageResource(R.drawable.a12s);
@@ -189,28 +193,18 @@ public class MapActivity extends AppCompatActivity {
             }
         } else ivt.setImageResource(R.drawable.tr);
 
-
-
-
+        //Stäng fönster
         RelativeLayout rlayout = (RelativeLayout) findViewById(R.id.screen);
         rlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-
         });
-
-
     }
-
+    //Stäng fönster
     public boolean onOptionsItemSelected(MenuItem item) {
-
         finish();
-
         return true;
-
     }
-
-
 }

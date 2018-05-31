@@ -34,7 +34,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
-import se.baraluftvapen.hansson.flora.adapter.ImageAdapter;
 import static se.baraluftvapen.hansson.flora.R.id.action_sort;
 import static se.baraluftvapen.hansson.flora.R.id.all_color;
 import static se.baraluftvapen.hansson.flora.R.id.main_filter;

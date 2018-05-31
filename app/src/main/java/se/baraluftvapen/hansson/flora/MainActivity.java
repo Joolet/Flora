@@ -1,3 +1,6 @@
+/*
+    Huvudmeny
+*/
 package se.baraluftvapen.hansson.flora;
 import android.content.Context;
 import android.content.Intent;
