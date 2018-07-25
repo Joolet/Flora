@@ -40,7 +40,7 @@ public class QuizMenu extends AppCompatActivity {
     private HashMap<String, Integer> nr_fam = new HashMap<String, Integer>();
     List<String> familys = new LinkedList<>();
     List<String> superfamilys = new LinkedList<>();
-    List<String> trashfamily = new LinkedList<>();                  //innehåller de växter som bara tillhör 3 eller mindre familjer
+    List<String> trashfamily = new LinkedList<>();                  //innehåller övriga växter som ingår i en familj var storlek är färre än 4
     List<String> categorys = new ArrayList<String>();                   //innehåller kategorier som finns
     List<String> all_no_flowers = new ArrayList<String>();              //innehåller strängarna till spinnern "blanda alla växter"
     private String selected_region;         //vald region
@@ -155,7 +155,7 @@ public class QuizMenu extends AppCompatActivity {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Det är ju sjukt korkat att ha hårdkodade strängar din tröga jävel
+//Sätter upp listor med olika kategorier av växter
     private void SetUpLists() {
         categorys.add(getResources().getStringArray(R.array.cat_array_temp).toString());
 
@@ -164,7 +164,7 @@ public class QuizMenu extends AppCompatActivity {
         all_no_flowers.add("25 st");
         all_no_flowers.add("50 st");
         all_no_flowers.add("100 st");
-        all_no_flowers.add("< 506 st");
+        all_no_flowers.add("< " + flowerList.size() + " st");
 
         SharedPreferences favoData = getSharedPreferences("favolist", 0);
 
@@ -217,9 +217,9 @@ public class QuizMenu extends AppCompatActivity {
             }
         }
 
-        //två statiska val som ligger överst. Men va fan, här ligger fler hårdkodade strängar!!!
+        //två val som alltid ligger överst
         superfamilys.add(0, "Välj familj:");
-        superfamilys.add(1, "Övriga familjer (87)");
+        superfamilys.add(1, "Övriga familjer (" + trashfamily.size() + ")");
         favor.setText("Mina favoriter (" + no_favos + ")");
         landor.setTextColor(Color.parseColor("#c6c6c6"));
         favor.setTextColor(Color.parseColor("#c6c6c6"));
@@ -233,7 +233,7 @@ public class QuizMenu extends AppCompatActivity {
             return o1.getName().toLowerCase().trim().compareTo(o2.getName().toLowerCase().trim());
         }
     }
-
+    //kategori spnner
     private void setupSpinners() {
         SharedPreferences settingsData = getSharedPreferences("settings", 0);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -244,9 +244,7 @@ public class QuizMenu extends AppCompatActivity {
         spinner_cat.setAdapter(adapter);
         spinner_cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
-                // TODO Auto-generated method stub
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Object item = arg0.getItemAtPosition(arg2);
                 if (item != null) {
                     category_val = item.toString();
@@ -254,14 +252,11 @@ public class QuizMenu extends AppCompatActivity {
                     category_val = "";
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
+            public void onNothingSelected(AdapterView<?> arg0) {}
         });
 
-
+        //Familj-spinner
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, superfamilys);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assert spinner_fam != null;
@@ -269,9 +264,7 @@ public class QuizMenu extends AppCompatActivity {
         //spinner.setSelection(settingsData.getInt("jump_to_region_position", 0));
         spinner_fam.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
-                // TODO Auto-generated method stub
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Object item = arg0.getItemAtPosition(arg2);
                 if (item != null) {
                     category_val = item.toString();
@@ -279,13 +272,11 @@ public class QuizMenu extends AppCompatActivity {
                     category_val = "";
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
+            public void onNothingSelected(AdapterView<?> arg0) {}
         });
 
+        //Blanda alla spinner
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, all_no_flowers);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assert spinner_all != null;
@@ -293,9 +284,7 @@ public class QuizMenu extends AppCompatActivity {
         //spinner.setSelection(settingsData.getInt("jump_to_region_position", 0));
         spinner_all.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
-                // TODO Auto-generated method stub
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Object item = arg0.getItemAtPosition(arg2);
                 if (item != null) {
                     category_val = item.toString();
@@ -303,13 +292,11 @@ public class QuizMenu extends AppCompatActivity {
                     category_val = "";
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
+            public void onNothingSelected(AdapterView<?> arg0) {}
         });
 
+        // Val av region spiner
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
                 R.array.region_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -319,9 +306,7 @@ public class QuizMenu extends AppCompatActivity {
         spinner_region.setSelection(settingsData.getInt("jump_to_region_position", 0));
         spinner_region.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
-                // TODO Auto-generated method stub
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 Object item = arg0.getItemAtPosition(arg2);
                 if (item != null) {
                     selected_region = item.toString();
@@ -329,15 +314,13 @@ public class QuizMenu extends AppCompatActivity {
                     selected_region = "Hela Sverige";
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-            }
+            public void onNothingSelected(AdapterView<?> arg0) {}
         });
 
     }
 
+    //Default läge, allt inaktiverat
     private void disableAll() {
         radiocat.setChecked(false);
         radiofam.setChecked(false);
@@ -358,6 +341,7 @@ public class QuizMenu extends AppCompatActivity {
         selected_region = spinner_region.getSelectedItem().toString();
     }
 
+    // Aktiverar radiobutton och spinner till val av Kategori
     public void radio_fam(View view) {
         disableAll();
         radiofam.setChecked(true);
@@ -366,6 +350,7 @@ public class QuizMenu extends AppCompatActivity {
         category_val = spinner_cat.getSelectedItem().toString();
     }
 
+    // Familj
     public void radio_cat(View view) {
         disableAll();
         radiocat.setChecked(true);
@@ -374,6 +359,7 @@ public class QuizMenu extends AppCompatActivity {
         category_val = spinner_fam.getSelectedItem().toString();
     }
 
+    // Blanda alla
     public void radio_all(View view) {
         disableAll();
         radioall.setChecked(true);
@@ -382,6 +368,7 @@ public class QuizMenu extends AppCompatActivity {
         category_val = spinner_fam.getSelectedItem().toString();
     }
 
+    // Favoriter
     public void radio_fav(View view) {
         disableAll();
         radiofav.setChecked(true);
@@ -393,6 +380,7 @@ public class QuizMenu extends AppCompatActivity {
         favor.setTextColor(Color.parseColor("#212121"));
     }
 
+    // Val av region
     public void radio_land(View view) {
         disableAll();
         radioland.setChecked(true);
@@ -416,20 +404,19 @@ public class QuizMenu extends AppCompatActivity {
             spinner_region.setEnabled(false);
             spinner_region.setClickable(false);
             selected_region = "Hela Sverige";
-
         }
-
     }
 
+    // Om quizläget Lista är markerat
     public void goToListQuiz(View view) {
         ImageView listimage = (ImageView) findViewById(R.id.goToListQuiz);
         ImageView picimage = (ImageView) findViewById(R.id.goToPicQuiz);
         listimage.setImageResource(R.drawable.example_quiz_s);
         picimage.setImageResource(R.drawable.example_quiz_pic);
         type = "list";
-
     }
 
+    // Om quizläget Bild är markerat
     public void goToPicQuiz(View view) {
         ImageView listimage = (ImageView) findViewById(R.id.goToListQuiz);
         ImageView picimage = (ImageView) findViewById(R.id.goToPicQuiz);
@@ -438,11 +425,9 @@ public class QuizMenu extends AppCompatActivity {
         type = "pic";
     }
 
+    // Hanterar val av språk
     public void radio_lan(View view) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
         switch (view.getId()) {
             case R.id.radio_swedish:
                 if (checked)
