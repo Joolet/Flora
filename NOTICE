@@ -1,11 +1,11 @@
-   This software includes software developed by
+   This application was developed with Google software.
+   
+   It has the following dependencies:
+   
+   Google Play Services
    Google Inc. (www.google.com)
    Copyright (c) 2018 Google Inc.  All rights reserved.
    
-   This software includes the following dependencies:
-   
    Fab speed dial
    Copyright 2016 Yavor Ivanov
-   io.github.yavski:fab-speed-dial:1.0.4
    https://github.com/yavski/fab-speed-dial
-  
