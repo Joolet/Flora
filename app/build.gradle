@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
-
+//apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId "se.baraluftvapen.hansson.flora"
@@ -25,13 +25,12 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:design:23.1.1'
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
-    compile 'io.github.yavski:fab-speed-dial:1.0.4'
-    compile 'com.android.support.constraint:constraint-layout:+'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation  'com.android.support:appcompat-v7:23.1.1'
+    implementation  'com.android.support:support-v4:23.1.1'
+    implementation  'com.android.support:design:23.1.1'
+    implementation  'com.google.android.gms:play-services-auth:9.4.0'
+    implementation  'io.github.yavski:fab-speed-dial:1.0.4'
+    implementation  'com.android.support.constraint:constraint-layout:+'
+    testImplementation 'junit:junit:4.12'
 }
-apply plugin: 'com.google.gms.google-services'
