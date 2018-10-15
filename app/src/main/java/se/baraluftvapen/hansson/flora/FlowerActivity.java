@@ -2,6 +2,7 @@
 Presenterar en enskild växt med dess egenskaper och text
 */
 package se.baraluftvapen.hansson.flora;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -16,10 +17,9 @@ import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.Gravity;
@@ -44,11 +44,13 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -62,6 +64,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 import io.github.yavski.fabspeeddial.SimpleMenuListenerAdapter;
 
@@ -949,7 +952,6 @@ public class FlowerActivity extends AppCompatActivity {
             GoogleSignInAccount acct = result.getSignInAccount();
             SharedPreferences.Editor editor = settings.edit();
             editor.putString("inloggad", acct.getDisplayName());
-            editor.putString("inloggad_id", acct.getId());
             editor.apply();
         } else {
             // Signed out
@@ -1005,7 +1007,7 @@ public class FlowerActivity extends AppCompatActivity {
             String timeStamp = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
             filename = ("" + flowerID[itemNumber] + "_" + timeStamp + ".txt");
             string = "blomma: " + flowerName[itemNumber] + "--> meddelande --> " + ET_des.getText().toString() + "--> kommentar --> " + ET_com.getText().toString() + "--> inloggad? -->" +
-                    settings.getString("inloggad", "ej inloggad") + "--> googleid --> " + settings.getString("inloggad_id", "ej inloggad") + "--> visa namn --> " + chk_name.isChecked();
+                    settings.getString("inloggad", "ej inloggad") + "--> visa namn --> " + chk_name.isChecked();
         }
         FileOutputStream outputStream;
         try {

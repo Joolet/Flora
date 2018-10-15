@@ -11,11 +11,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -35,7 +31,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
@@ -132,7 +127,7 @@ public class QuizActivity extends AppCompatActivity {
             //om "blanda alla" ska köras, lägg till no_flowers till refinedlist
         } else if (i.getExtras().getBoolean("show_all")) {
             if (!i.getExtras().getString("region").contains("Hela")) {
-                String[] styckad = i.getExtras().getString("region").toString().split(" ");
+                String[] styckad = i.getExtras().getString("region").split(" ");
                 styckad[0] = styckad[0].replace('ö', 'o').replace('å', 'a').replace('ä', 'a').replace('é', 'e').replace('Ä', 'A').replace('Ö', 'O').replace('Å', 'A');
                 String region_char = getString(getResources().getIdentifier((styckad[0]), "string", getPackageName()));
 
@@ -211,7 +206,7 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         if (!i.getExtras().getString("region").contains("Hela")) {
-            String[] styckad = i.getExtras().getString("region").toString().split(" ");
+            String[] styckad = i.getExtras().getString("region").split(" ");
             styckad[0] = styckad[0].replace('ö', 'o').replace('å', 'a').replace('ä', 'a').replace('é', 'e').replace('Ä', 'A').replace('Ö', 'O').replace('Å', 'A');
             String region_char = getString(getResources().getIdentifier((styckad[0]), "string", getPackageName()));
 

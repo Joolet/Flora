@@ -3,10 +3,9 @@ package se.baraluftvapen.hansson.flora;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -109,7 +108,7 @@ public class QuizPic extends AppCompatActivity {
             //om "blanda alla" ska köras, lägg till no_flowers till refinedlist
         } else if (i.getExtras().getBoolean("show_all")) {
             if (!i.getExtras().getString("region").contains("Hela")) {
-                String[] styckad = i.getExtras().getString("region").toString().split(" ");
+                String[] styckad = i.getExtras().getString("region").split(" ");
                 styckad[0] = styckad[0].replace('ö', 'o').replace('å', 'a').replace('ä', 'a').replace('é', 'e').replace('Ä', 'A').replace('Ö', 'O').replace('Å', 'A');
                 String region_char = getString(getResources().getIdentifier((styckad[0]), "string", getPackageName()));
 
@@ -184,7 +183,7 @@ public class QuizPic extends AppCompatActivity {
         }
 
         if (!i.getExtras().getString("region").contains("Hela")) {
-            String[] styckad = i.getExtras().getString("region").toString().split(" ");
+            String[] styckad = i.getExtras().getString("region").split(" ");
             styckad[0] = styckad[0].replace('ö', 'o').replace('å', 'a').replace('ä', 'a').replace('é', 'e').replace('Ä', 'A').replace('Ö', 'O').replace('Å', 'A');
             String region_char = getString(getResources().getIdentifier((styckad[0]), "string", getPackageName()));
 

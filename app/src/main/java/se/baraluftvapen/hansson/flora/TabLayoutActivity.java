@@ -1,5 +1,6 @@
 //Info är egentligen TabLayoutActivity eller tvärt om, med flik- och flikinnehållsLayout, samt knapptryckshantering
 package se.baraluftvapen.hansson.flora;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,14 +42,15 @@ public class TabLayoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout);
-        ServerUrl = getString ( getResources().getIdentifier("url_up", "string", getPackageName()));
+        ServerUrl = getString(getResources().getIdentifier("url_up", "string", getPackageName()));
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        TabsPagerAdapter adapter = new TabsPagerAdapter(getSupportFragmentManager());	
+        TabsPagerAdapter adapter = new TabsPagerAdapter(getSupportFragmentManager());
         assert pager != null;
         pager.setAdapter(adapter);
         assert tabs != null;
         tabs.setupWithViewPager(pager);
+
     }
 	
 //-------------------------------------------------------------------
@@ -99,6 +102,14 @@ public class TabLayoutActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
         intent.setData(Uri.parse("http://biolib.mpipz.mpg.de/library/authors/author_00146_de.html"));
+        startActivity(intent);
+    }
+
+    public void terms(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("https://sites.google.com/view/svenskavaxter/Terms"));
         startActivity(intent);
     }
 	

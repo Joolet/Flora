@@ -1,7 +1,9 @@
 <resources>
+    <string name="appversion">Version 1.21</string>
+    <string name="termcond">Terms and Conditions</string>
 
-    <string name="url_down">http://domännamn.com/uploads/</string>
-    <string name="url_up">http://domännamn.com/uploads/UploadToServer.php</string>
+    <string name="url_down">http://baraluftvapen.se/tmp/uploads/blom_update21.txt</string>
+    <string name="url_up">http://baraluftvapen.se/tmp/UploadToServer.php</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -382,8 +384,7 @@
     <string name="info6">Jag som har gjort appen har inga kunskaper inom botanik och att det finns risk att förekommer fel i växternas egenskaper eller beskrivningar.</string>
     <string name="info5">Appen är först och främst utvecklad för Android 5.0 och uppåt och för upplösningar från 720p. Upplever du att appen inte fungerar korrekt eller att bilder ser konstiga ut, så hör gärna av dig.</string>
     <string name="info9">Här kan du rösta på vad du vill se för uppdateringar i framtiden. Tryck på det alternativ som passar dig bäst.</string>
-
-    <string name="appversion">App-version 1.20</string>
+    <string name="info0">Appen inspirerats av Wikipedia där planen var att användare som du ska kunna redigera all information om en blomma för att få en så bra databas som möjligt. För tillfället är det bara möjligt att redigera blommans beskrivning. På grund av tidsbrist kommer färre framtida uppdateringar ske appen. Databasen kommer dock fortfarande utökas titt som tätt.</string>
 
     <string name="kalla1">\u2022 Franz Eugen Köhler, Köhlers Medizinal-Pflanzen</string>
     <string name="kalla2">\u2022 Jacob Sturm, Flora von Deutschland in Abbildungen nach der Natur</string>
