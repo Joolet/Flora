@@ -22,7 +22,6 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-
         <RelativeLayout
             android:id="@+id/relative_lay"
             android:layout_width="match_parent"
@@ -452,7 +451,5 @@
                     android:onClick="mfab"
                     android:src="@drawable/ic_check_white_24dp"
                     android:visibility="invisible" />
-
-
 
             </FrameLayout>

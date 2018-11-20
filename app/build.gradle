@@ -1,19 +1,18 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "se.baraluftvapen.hansson.flora"
-        minSdkVersion 20
+        minSdkVersion 21
         targetSdkVersion 26
-        versionCode 22
-        versionName "1.21"
+        versionCode 24
+        versionName "1.23.0"
     }
     buildTypes {
         release {
-            shrinkResources true
+            shrinkResources false
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -28,5 +27,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.0.0'
     implementation 'com.google.android.gms:play-services-auth:9.4.0'
-    implementation 'io.github.yavski:fab-speed-dial:1.0.4'
+    implementation 'io.github.yavski:fab-speed-dial:1.0.6'
 }
