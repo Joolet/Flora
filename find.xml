@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '...\app\build.gradle [app]'" />
-    <option name="defaultScopeName" value="File '...\app\build.gradle [app]'" />
+    <option name="customScope" value="Unnamed" />
+    <option name="defaultScopeName" value="Unnamed" />
     <option name="wholeWordsOnly" value="true" />
     <option name="WHOLE_WORDS_ONLY" value="true" />
-    <option name="SEARCH_SCOPE" value="File '...\app\build.gradle [app]'" />
+    <option name="SEARCH_SCOPE" value="Unnamed" />
   </component>
 </application>

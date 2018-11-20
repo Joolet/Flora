@@ -1,4 +1,7 @@
 <application>
+  <component name="DependencyUISettings">
+    <option name="SCOPE_TYPE" value="file" />
+  </component>
   <component name="UISettings">
     <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="PIN_FIND_IN_PATH_POPUP" value="true" />
