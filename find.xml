@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Unnamed" />
-    <option name="defaultScopeName" value="Unnamed" />
+    <option name="customScope" value="Project 'Flora'" />
+    <option name="defaultScopeName" value="Project 'Flora'" />
     <option name="wholeWordsOnly" value="true" />
     <option name="WHOLE_WORDS_ONLY" value="true" />
-    <option name="SEARCH_SCOPE" value="Unnamed" />
+    <option name="SEARCH_SCOPE" value="Project 'Flora'" />
   </component>
 </application>
