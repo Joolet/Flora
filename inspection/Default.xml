@@ -1,0 +1,5 @@
+<profile version="1.0">
+  <option name="myName" value="Default" />
+  <inspection_tool class="Dependency" enabled="false" level="ERROR" enabled_by_default="false" />
+  <inspection_tool class="MissingFinalNewline" enabled="false" level="ERROR" enabled_by_default="false" />
+</profile>
