@@ -1,6 +1,6 @@
 <resources>
-    <string name="appversion">Version 1.21</string>
-    <string name="termcond">Terms and Conditions</string>
+    <string name="appversion">Version 1.23.0</string>
+    <string name="termcond">Privacy Policys</string>
 
     <string name="url_down">http://baraluftvapen.se/tmp/uploads/blom_update21.txt</string>
     <string name="url_up">http://baraluftvapen.se/tmp/UploadToServer.php</string>
