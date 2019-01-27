@@ -4,6 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_margin="10dp"
+
+    android:background="#ffffff"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -105,7 +107,7 @@
             android:background="#ffffff"
             android:gravity="bottom|end"
             android:onClick="terms"
-            android:text="Användarvillkor"
+            android:text="@string/termcond"
             android:textAlignment="viewEnd"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />

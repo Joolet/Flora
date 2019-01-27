@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goAbout(View view) {
-        Intent intent = new Intent(this, TabLayoutActivity.class);
+        Intent intent = new Intent(getApplicationContext(), TabLayoutActivity.class);
         startActivity(intent);
     }
 

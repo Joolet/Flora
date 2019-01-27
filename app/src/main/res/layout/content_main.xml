@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Huvudlayouten till MainActivity -->
+    <!-- Huvudlayouten till MainActivity -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -13,22 +13,22 @@
     android:scaleType="centerCrop">
 
 
-        <Button
-            android:text="Bläddra"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_width="167dp"
-            android:layout_height="50dp"
-            android:background="@xml/button_layout"
-            android:drawableEnd="@drawable/ic_view_module_white_24dp"
-            android:drawablePadding="0dp"
-            android:paddingRight="10pt"
-            android:textAllCaps="false"
-            android:onClick="goBrowse"
-            android:id="@+id/button"
-            android:layout_above="@+id/button2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="22dp" />
+    <Button
+        android:text="Bläddra"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_width="167dp"
+        android:layout_height="50dp"
+        android:background="@xml/button_layout"
+        android:drawableEnd="@drawable/ic_view_module_white_24dp"
+        android:drawablePadding="0dp"
+        android:paddingRight="10pt"
+        android:textAllCaps="false"
+        android:onClick="goBrowse"
+        android:id="@+id/button"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp" />
 
     <Button
 
@@ -66,34 +66,29 @@
 
 
 
-        <Button
+    <Button
 
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@xml/button_layout_round"
-            android:drawableStart="@drawable/ic_settings_white_24dp"
-            android:textAllCaps="false"
-            android:id="@+id/button4"
-            android:onClick="goSettings"
-            android:layout_gravity="left|bottom"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@xml/button_layout_round"
+        android:drawableStart="@drawable/ic_settings_white_24dp"
+        android:textAllCaps="false"
+        android:id="@+id/button4"
+        android:onClick="goSettings"
+        android:layout_gravity="left|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
 
-        <Button
+    <Button
 
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@xml/button_layout_round"
-            android:drawableStart="@drawable/ic_info_outline_white_24dp"
-            android:textAllCaps="false"
-            android:id="@+id/button3"
-            android:onClick="goAbout"
-            android:layout_gravity="bottom|right"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true" />
-
-
-
-
-
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@xml/button_layout_round"
+        android:drawableStart="@drawable/ic_info_outline_white_24dp"
+        android:textAllCaps="false"
+        android:id="@+id/button3"
+        android:onClick="goAbout"
+        android:layout_gravity="bottom|right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>
