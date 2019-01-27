@@ -1,20 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 23
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "se.baraluftvapen.hansson.flora"
         minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 24
-        versionName "1.23.0"
+        targetSdkVersion 28
+        versionCode 23
+        versionName "1.22.0"
     }
     buildTypes {
         release {
-            shrinkResources false
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -25,7 +23,7 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support:appcompat-v7:23.0.0'
     implementation 'com.google.android.gms:play-services-auth:9.4.0'
     implementation 'io.github.yavski:fab-speed-dial:1.0.6'
 }

@@ -38,7 +38,7 @@ public class ImageAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.inflate_gridview, parent, false);
         }
-
+        convertView.setBackgroundResource(R.drawable.bggg);
         SharedPreferences sharedPreferences = context.getSharedPreferences("settings", 0);
         // hämtar antal kolumner som ska visas beroende på användaren har tagit för inställning
         // inställningarna ligger sparade i sharedpreferenses

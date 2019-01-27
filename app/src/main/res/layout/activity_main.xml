@@ -19,13 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:itemTextColor="#ffffff"
+        android:background="@drawable/bgg_trans"
         android:fitsSystemWindows="true"
-        app:itemBackground="@xml/drawer_button_layout"
-        android:background="@color/colorPrimary"
         app:headerLayout="@layout/nav_header_main"
+        app:itemBackground="@xml/drawer_button_layout"
         app:itemIconTint="#ffffff"
-        app:menu="@menu/activity_main_drawer" >
+        app:itemTextColor="#ffffff"
+        app:menu="@menu/activity_main_drawer">
 
     </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

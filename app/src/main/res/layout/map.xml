@@ -139,16 +139,17 @@
         android:layout_toStartOf="@+id/k"
         android:layout_marginTop="11dp"
         android:layout_marginRight="7dp" />
+
     <ImageView
+        android:id="@+id/g"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/g"
-        android:src="@drawable/g"
-        android:layout_marginTop="17dp"
-        android:layout_marginLeft="1dp"
-        android:layout_below="@+id/j"
-        android:layout_alignEnd="@+id/i"
-        android:layout_marginRight="3dp" />
+        android:layout_below="@+id/l"
+        android:layout_alignStart="@+id/outline"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/g" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -156,14 +157,16 @@
         android:src="@drawable/f"
         android:layout_below="@+id/l"
         android:layout_alignStart="@+id/outline" />
+
     <ImageView
+        android:id="@+id/e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/e"
-        android:src="@drawable/e"
         android:layout_below="@+id/h"
         android:layout_alignEnd="@+id/i"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/e" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -182,14 +185,16 @@
         android:layout_alignStart="@+id/outline"
         android:layout_marginStart="13dp"
         android:layout_marginBottom="4dp" />
+
     <ImageView
+        android:id="@+id/b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/b"
-        android:src="@drawable/b"
-        android:layout_below="@+id/g"
+        android:layout_below="@+id/h"
         android:layout_alignStart="@+id/i"
-        android:layout_marginTop="15dp" />
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/b" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,14 +202,15 @@
         android:src="@drawable/a"
         android:layout_alignBottom="@+id/outline"
         android:layout_alignEnd="@+id/n" />
+
     <ImageView
+        android:id="@+id/a12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/a12"
-        android:src="@drawable/a12"
-        android:layout_alignBottom="@+id/g"
+        android:layout_alignBottom="@+id/c"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="23dp"
         android:layout_toEndOf="@+id/j"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="1dp" />
+        android:src="@drawable/a12" />
 
 </RelativeLayout>

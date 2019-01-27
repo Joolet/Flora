@@ -114,6 +114,7 @@ public class FlowerActivity extends AppCompatActivity {
     private LinearLayout lay_com;
     private LinearLayout lay_com2;
     private TextView TV_private;
+    private TextView TV_privateHC;
     private Spinner spinner_petal;
     
     //blandad kompott
@@ -160,6 +161,7 @@ public class FlowerActivity extends AppCompatActivity {
         TV_category2 = (TextView) findViewById(R.id.category2);
         TV_category3 = (TextView) findViewById(R.id.category3);
         TV_private = (TextView) findViewById(R.id.text_private);
+        TV_privateHC = (TextView) findViewById(R.id.hardcore_private);
         spinner_petal = (Spinner) findViewById(R.id.spinner_petal);
 
         //Googlekonto
@@ -304,7 +306,7 @@ public class FlowerActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.google.nl/search?tbm=isch&q=" + flowerName[itemNumber]));
+        intent.setData(Uri.parse("https://www.google.se/search?tbm=isch&q=" + flowerName[itemNumber]));
         startActivity(intent);
     }
     
@@ -439,6 +441,10 @@ public class FlowerActivity extends AppCompatActivity {
                     editor.putString(flowerID[itemNumber], ET_des.getText().toString());
                     editor.apply();
                     TV_private.setText(ET_des.getText().toString());
+                    if ( TV_private.getText().toString().trim() != "" )
+                        TV_privateHC.setVisibility(View.VISIBLE);
+                    else
+                        TV_privateHC.setVisibility(View.INVISIBLE);
                 }
             }
         }
@@ -819,6 +825,10 @@ public class FlowerActivity extends AppCompatActivity {
         imageView.setImageResource(imageRef);
 
         TV_private.setText(settings.getString(flowerID[itemNumber], "")); //hämtar kommentar av växt i minnet
+        if ( TV_private.getText().toString().trim() != "" )
+            TV_privateHC.setVisibility(View.VISIBLE);
+        else
+            TV_privateHC.setVisibility(View.INVISIBLE);
 
         //fixar så det blir korrekt med kommatecknet vid flera olika namn på en blomma
         if (flowerOtherName[itemNumber].equals(""))

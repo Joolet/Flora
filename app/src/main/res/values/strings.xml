@@ -290,6 +290,32 @@
     <string name="Oland1">Ölandssolvända</string>
     <string name="Ostergotland1">Blåklint</string>
 
+    <!-- Omvandligar mellan månadskod och månad -->
+    <string name="m1">jan</string>
+    <string name="m2">feb</string>
+    <string name="m3">mar</string>
+    <string name="m4">apr</string>
+    <string name="m5">may</string>
+    <string name="m6">jun</string>
+    <string name="m7">jul</string>
+    <string name="m8">aug</string>
+    <string name="m9">sep</string>
+    <string name="m10">oct</string>
+    <string name="m11">nov</string>
+    <string name="m12">dec</string>
+    <string name="n1">Januari</string>
+    <string name="n2">Februari</string>
+    <string name="n3">Mars</string>
+    <string name="n4">April</string>
+    <string name="n5">Maj</string>
+    <string name="n6">Juni</string>
+    <string name="n7">Juli</string>
+    <string name="n8">Augusti</string>
+    <string name="n9">September</string>
+    <string name="n10">Oktober</string>
+    <string name="n11">November</string>
+    <string name="n12">December</string>
+
     <!-- Används till QUIZ för spinnern -->
     <string-array name="region_array">
         <item>Hela Sverige</item>
