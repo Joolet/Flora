@@ -3,7 +3,9 @@
     <option name="SCOPE_TYPE" value="file" />
   </component>
   <component name="UISettings">
-    <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="PIN_FIND_IN_PATH_POPUP" value="true" />
+    <option name="PRESENTATION_MODE_FONT_SIZE" value="20" />
+    <option name="RIGHT_HORIZONTAL_SPLIT" value="true" />
+    <option name="USE_SMALL_LABELS_ON_TABS" value="true" />
   </component>
 </application>
