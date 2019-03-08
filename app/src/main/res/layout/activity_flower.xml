@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:background="@color/colorDes2"
@@ -34,8 +34,8 @@
                 android:id="@+id/full_size_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="false"
                 android:layout_gravity="start"
                 android:layout_marginLeft="0dp"
@@ -49,143 +49,167 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/full_size_image"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/full_size_image"
-                android:orientation="vertical"
-                android:paddingRight="1dp">
+                android:orientation="vertical">
 
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hardcore_blom"
+                        style="@style/Wrap13"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Blomning:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_blomning"
+                        style="@style/Wrap13"
+                        android:paddingLeft="5dp"
+                        android:text="New Text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/hardcore_length"
+                        style="@style/Wrap13"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Upp till:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_length"
+                        style="@style/Wrap13"
+                        android:paddingLeft="5dp"
+                        android:text="New Text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/hardcore_petal"
+                        style="@style/Wrap13"
+                        android:onClick="map"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Antal kronblad:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_petal"
+                        style="@style/Wrap13"
+                        android:paddingLeft="5dp"
+                        android:text="New Text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hardcore_family"
+                        style="@style/Wrap13"
+                        android:clickable="true"
+                        android:onClick="viewFamily"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Familj:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_family"
+                        style="@style/Wrap13"
+                        android:clickable="true"
+                        android:onClick="viewFamily"
+                        android:paddingLeft="5dp"
+                        android:text="Kransblommiga växter"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hardcore_spread"
+                        style="@style/Wrap13"
+                        android:onClick="map"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Utbredning:"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_spread"
+                        style="@style/Wrap13"
+                        android:onClick="map"
+                        android:paddingLeft="5dp"
+                        android:text="Växet i Götaland och östra sveal. längs kusten upp till umeå"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
-            android:background="@color/blue_heaven"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/hardcore_names"
-                style="@style/Wrap13"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:text="Svenska namn:"
-                android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorDes2"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp">
+
             <TextView
                 android:id="@+id/textView_names"
-                style="@style/Wrap13"
-                android:paddingLeft="5dp"
-                android:text="Kransblommiga växter" />
-            <TextView
-                android:id="@+id/hardcore_latin"
-                style="@style/Wrap13"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:text="Latinskt namn:"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/textView_latin"
-                style="@style/Wrap13"
-                android:paddingLeft="5dp"
-                android:text="New Text" />
-            <TextView
-                android:id="@+id/hardcore_family"
-                style="@style/Wrap13"
-                android:clickable="true"
-                android:onClick="viewFamily"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:text="Familj:"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/textView_family"
-                style="@style/Wrap13"
-                android:clickable="true"
-                android:onClick="viewFamily"
-                android:paddingLeft="5dp"
-                android:text="Kransblommiga växter"
-                android:textColor="@color/colorPrimary" />
-
-            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/hardcore_blom"
-                    style="@style/Wrap13"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Blomning:"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/textView_blomning"
-                    style="@style/Wrap13"
-                    android:paddingLeft="5dp"
-                    android:text="New Text" />
-            </LinearLayout>
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:elevation="4dp"
+                android:text="svartkämpe"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    style="@style/Wrap13"
-                    android:id="@+id/hardcore_length"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Upp till:"
-                    android:textStyle="bold" />
-                <TextView
-                    style="@style/Wrap13"
-                    android:id="@+id/textView_length"
-                    android:paddingLeft="5dp"
-                    android:text="New Text" />
-            </LinearLayout>
+        <LinearLayout
+            style="@style/Wrap13"
+            android:layout_width="match_parent"
+            android:layout_height="379dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/blue_heaven"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
 
             <TextView
-                style="@style/Wrap13"
-                android:id="@+id/hardcore_spread"
-                android:onClick="map"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:text="Utbredning:"
-                android:textStyle="bold" />
-            <TextView
-                style="@style/Wrap13"
-                android:id="@+id/textView_spread"
-                android:onClick="map"
-                android:paddingLeft="5dp"
-                android:text="New Text"
-                android:textColor="@color/colorPrimary" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:layout_height="wrap_content">
-                <TextView
-                    style="@style/Wrap13"
-                    android:id="@+id/hardcore_petal"
-                    android:onClick="map"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Antal kronblad:"
-                    android:textStyle="bold" />
-                <Spinner
-                    android:id="@+id/spinner_petal"
-                    style="@style/Wrap13"
-                    android:spinnerMode="dialog"
-                    android:textColor="#000000" />
-            </LinearLayout>
-
-            <TextView
-                style="@style/Wrap13"
                 android:id="@+id/hard_bes"
+                style="@style/Wrap13"
                 android:onClick="map"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:text="Beskrivning:"
+                android:text="Beskrivning och andra anmärkningar:"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/textView_description"
                 style="@style/Wrap13"
@@ -194,82 +218,80 @@
                 android:textSize="13sp" />
 
             <LinearLayout
-                style="@style/Wrap13"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hardcore_also"
+                    style="@style/Wrap13"
+                    android:layout_marginStart="5dp"
+                    android:text="Se även:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/google_link"
+                    style="@style/Wrap13"
+                    android:onClick="googleLink"
+                    android:paddingLeft="10dp"
+                    android:text="google loink"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category1"
+                    style="@style/Wrap13"
+                    android:layout_marginStart="76dp"
+                    android:onClick="category1"
+                    android:text="träd"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/category2"
+                    style="@style/Wrap13"
+                    android:onClick="category2"
+                    android:paddingLeft="10dp"
+                    android:text="buskar"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/category3"
+                    style="@style/Wrap13"
+                    android:onClick="category3"
+                    android:paddingLeft="10dp"
+                    android:text="stuff"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="@color/blue_heaven"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/hardcore_also"
-                        style="@style/Wrap13"
-                        android:layout_marginStart="5dp"
-                        android:text="Se även:"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/google_link"
-                        style="@style/Wrap13"
-                        android:onClick="googleLink"
-                        android:paddingLeft="10dp"
-                        android:text="google loink"
-                        android:textColor="@color/colorPrimary" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/hardcore_private"
+                    style="@style/Wrap13"
+                    android:layout_marginStart="5dp"
+                    android:text="Privat kommentar:"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/category1"
-                        style="@style/Wrap13"
-                        android:layout_marginStart="76dp"
-                        android:onClick="category1"
-                        android:text="träd"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="visible" />
-                    <TextView
-                        android:id="@+id/category2"
-                        style="@style/Wrap13"
-                        android:onClick="category2"
-                        android:paddingLeft="10dp"
-                        android:text="buskar"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="visible" />
-                    <TextView
-                        android:id="@+id/category3"
-                        style="@style/Wrap13"
-                        android:onClick="category3"
-                        android:paddingLeft="10dp"
-                        android:text="stuff"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="visible" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dip"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/hardcore_private"
-                        style="@style/Wrap13"
-                        android:layout_marginStart="5dp"
-                        android:text="Privat kommentar:"
-                        android:visibility="visible"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/text_private"
-                        style="@style/Wrap13"
-                        android:paddingLeft="5dp"
-                        android:text="Anders" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/text_private"
+                    style="@style/Wrap13"
+                    android:paddingLeft="5dp"
+                    android:text="Anders" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -278,12 +300,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize">
+
         <ImageView
             android:id="@+id/expanded_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adjustViewBounds="false"
             android:background="@color/colorDes"
             android:contentDescription="description_zoom_touch_close"
+            android:cropToPadding="true"
             android:visibility="invisible" />
     </LinearLayout>
 

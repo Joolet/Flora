@@ -100,8 +100,8 @@ public class FlowerActivity extends AppCompatActivity {
     private TextView TV_spread;
     private TextView TV_length;
     private TextView TV_names;
-    private TextView TV_latin;
     private TextView TV_family;
+    private TextView TV_petals;
     private TextView TV_category1;
     private TextView TV_category2;
     private TextView TV_category3;
@@ -156,13 +156,12 @@ public class FlowerActivity extends AppCompatActivity {
         TV_family = (TextView) findViewById(R.id.textView_family);
         TV_googleLink = (TextView) findViewById(R.id.google_link);
         TV_names = (TextView) findViewById(R.id.textView_names);
-        TV_latin = (TextView) findViewById(R.id.textView_latin);
         TV_category1 = (TextView) findViewById(R.id.category1);
         TV_category2 = (TextView) findViewById(R.id.category2);
         TV_category3 = (TextView) findViewById(R.id.category3);
         TV_private = (TextView) findViewById(R.id.text_private);
         TV_privateHC = (TextView) findViewById(R.id.hardcore_private);
-        spinner_petal = (Spinner) findViewById(R.id.spinner_petal);
+        TV_petals = (TextView) findViewById(R.id.textView_petal);
 
         //Googlekonto
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -189,20 +188,7 @@ public class FlowerActivity extends AppCompatActivity {
         flowerEditname = i.getExtras().getStringArray("edited");
         flowerColor = i.getExtras().getStringArray("color");
 
-        //init till "redigera antal kronblad"
-        List<String> petal_list = new LinkedList<>();
-        petal_list.add("Lägg till (inaktiverad tillsvidare)");
-        petal_list.add("3 st eller färre");
-        petal_list.add("4 st");
-        petal_list.add("5 st");
-        petal_list.add("6 st eller fler");
-        petal_list.add("Varierar");
-        petal_list.add("Asymmetrisk/annat");
-        petal_list.add("Saknar/syns ej");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, petal_list);
-        assert spinner_petal != null;
-        spinner_petal.setAdapter(adapter);
-        spinner_petal.setEnabled(false);
+
 
         //presentera växen på skärmen
         DisplayFlower(); 
@@ -269,37 +255,7 @@ public class FlowerActivity extends AppCompatActivity {
         finish();
     }
 
-    //------------------------------------------------------------------------------------------------------
-    //när användaren redigerar antal kronblad
-    private void setupSpinners() {
-        spinner_petal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
-                Object item = arg0.getItemAtPosition(arg2);
-                if (item != null) {
-                    String val = item.toString();
-                    if (val.contains("3") && !no_petals.equals("3"))
-                        uploadData("3");
-                    else if (val.contains("4")&& !no_petals.equals("4"))
-                        uploadData("4");
-                    else if (val.contains("5")&& !no_petals.equals("5"))
-                        uploadData("5");
-                    else if (val.contains("6")&& !no_petals.equals("6"))
-                        uploadData("6");
-                    else if (val.equals("Asymmetrisk/annat")&& !no_petals.equals("9"))
-                        uploadData("9");
-                    else if (val.equals("Varierar")&& !no_petals.equals("1"))
-                        uploadData("1");
-                    else if (val.equals("Saknar/syns ej")&& !no_petals.equals("0"))
-                        uploadData("0");
-                }
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-    }
     //-----------------------------------------------------------------------------------------
     //öppna webläsare för att visa bildresultat
     public void googleLink(View v) {
@@ -724,7 +680,6 @@ public class FlowerActivity extends AppCompatActivity {
             TV_family.setTextSize(text_size);
             TV_length.setTextSize(text_size);
             TV_names.setTextSize(text_size);
-            TV_latin.setTextSize(text_size);
             TV_private.setTextSize(text_size);
             TV_category1.setTextSize(text_size);
             TV_category2.setTextSize(text_size);
@@ -743,9 +698,6 @@ public class FlowerActivity extends AppCompatActivity {
             TextView hc3 = (TextView) findViewById(R.id.hardcore_length);
             hc3.setTextSize(text_size);
             hc3.setPaddingRelative(offset_pad1, offset_pad, 0, 0);
-            TextView hc4 = (TextView) findViewById(R.id.hardcore_names);
-            hc4.setTextSize(text_size);
-            hc4.setPaddingRelative(offset_pad1, offset_pad, 0, 0);
             TextView hc5 = (TextView) findViewById(R.id.hardcore_spread);
             hc5.setTextSize(text_size);
             hc5.setPaddingRelative(offset_pad1, offset_pad, 0, 0);
@@ -754,21 +706,21 @@ public class FlowerActivity extends AppCompatActivity {
          no_petals = flowerEditname[itemNumber].trim();
         if (!no_petals.equals("no")) {
             if (no_petals.equals("3"))
-                spinner_petal.setSelection(1);
+                TV_petals.setText("3 st eller färre");
             else if (no_petals.equals("4"))
-                spinner_petal.setSelection(2);
+                TV_petals.setText("4 st");
             else if (no_petals.equals("5"))
-                spinner_petal.setSelection(3);
+                TV_petals.setText("5 st");
             else if (no_petals.equals("6"))
-                spinner_petal.setSelection(4);
+                TV_petals.setText("6 st eller fler");
             else if (no_petals.equals("9"))
-                spinner_petal.setSelection(6);
+                TV_petals.setText("Varierar");
             else if (no_petals.equals("1"))
-                spinner_petal.setSelection(5);
+                TV_petals.setText("Asymmetrisk/annat");
             else if (no_petals.equals("0"))
-                spinner_petal.setSelection(7);
+                TV_petals.setText("Saknar/syns ej");
         } else
-            spinner_petal.setSelection(0);
+            TV_petals.setText("Uppgift saknas");
 
 
         //om category innehåller ALLA kategorier
@@ -812,7 +764,6 @@ public class FlowerActivity extends AppCompatActivity {
             TV_length.setText("" + flowerheight / 100 + " m");
 
         TV_family.setText(flowerFamily[itemNumber]);
-        TV_latin.setText(flowerLatin[itemNumber]);
         TV_family.setPaintFlags(TV_family.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         setTitle(flowerName[itemNumber]);
         //letar upp bilden som heter "Zxx_t"
@@ -832,9 +783,9 @@ public class FlowerActivity extends AppCompatActivity {
 
         //fixar så det blir korrekt med kommatecknet vid flera olika namn på en blomma
         if (flowerOtherName[itemNumber].equals(""))
-            TV_names.setText(flowerName[itemNumber]);
+            TV_names.setText(flowerName[itemNumber] + ", (" + flowerLatin[itemNumber]);
         else
-            TV_names.setText(flowerName[itemNumber] + ", " + flowerOtherName[itemNumber]);
+            TV_names.setText(flowerName[itemNumber] + ", "  +  flowerOtherName[itemNumber] + " (" +flowerLatin[itemNumber]+")");
     }
 
     //försök av att spara minnne
@@ -977,7 +928,6 @@ public class FlowerActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mGoogleApiClient.connect();
-        setupSpinners();
     }
 
     /*
