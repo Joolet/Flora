@@ -568,7 +568,7 @@ public class FlowerActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorite:
-                SharedPreferences settings = getSharedPreferences("favolist", 0);
+                SharedPreferences settings = getSharedPreferences("favolist1", 0);
                 boolean isFavorite = settings.getBoolean(flowerID[itemNumber], false);
                 if (isFavorite) {
                     Toast.makeText(getApplicationContext(), "Borttagen från favoriter", Toast.LENGTH_SHORT).show();

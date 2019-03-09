@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_favo"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@xml/border"
+    android:padding="10sp"
+    android:layout_margin="15dp"
+    android:elevation="10dp">
+    <!-- Popupfönster när man trycker "redigera"-något -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit_white_24dp"
+        android:layout_margin="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:paddingStart="10dp"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:text="Skapa ny ista" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/popuptext_favo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:elevation="5dp"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="5sp"
+        android:text="Hello!" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/msgGetFocusFavo"
+        android:onClick="msgGetFocusFavo"
+        android:background="@xml/edittext_bg"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editText_favo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:imeOptions="actionDone"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="10dp"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="Avbryt"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:background="@xml/button_layout"
+            android:textAllCaps="false"
+            android:id="@+id/close_popup_favo"
+            android:layout_alignParentStart="true" />
+        <Button
+            android:text="Skapa"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:background="@xml/button_layout"
+            android:drawablePadding="0dp"
+            android:textAllCaps="false"
+            android:id="@+id/ok_popup_favo"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+</LinearLayout>
