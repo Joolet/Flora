@@ -198,7 +198,7 @@
             android:layout_height="379dp"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="@color/blue_heaven"
+            android:background="@color/colorDes"
             android:elevation="4dp"
             android:orientation="vertical"
             android:paddingTop="10dp">
@@ -207,13 +207,14 @@
                 android:id="@+id/hard_bes"
                 style="@style/Wrap13"
                 android:onClick="map"
+                android:layout_marginStart="5dp"
                 android:text="Beskrivning och andra anmärkningar:"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView_description"
                 style="@style/Wrap13"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 android:text="huu"
                 android:textSize="13sp" />
 
@@ -290,7 +291,7 @@
                 <TextView
                     android:id="@+id/text_private"
                     style="@style/Wrap13"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:text="Anders" />
             </LinearLayout>
         </LinearLayout>

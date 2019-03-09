@@ -66,13 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goFavo(View view) {
-        Intent i = new Intent(getApplicationContext(), Browse.class);
-        i.putExtra("favo", true);
-        if (nyBlomma != null) {
-            i.putExtra("update", nyBlomma); //skicka med de nya uppdaterade blommorna
-        } else {
-            i.putExtra("update", nodata); //skicka med de nya uppdaterade blommorna
-        }
+        Intent i = new Intent(getApplicationContext(), FavoMenuActivity.class);
         startActivity(i);
     }
 
